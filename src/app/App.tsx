@@ -1,14 +1,14 @@
 import {FC, Suspense} from 'react';
 import {Link, Route, Routes as RouteList} from "react-router-dom";
 
-import {joinClassNames} from "./utils";
+import {joinClassNames} from "shared/lib/utils";
 
-import {Routes} from './constants';
+import {Routes} from 'shared/lib/constants';
 
-import useTheme from "./theme/useTheme";
+import {useTheme} from "app/providers/ThemeProvider";
 
-import MainPageAsync from "./pages/MainPage";
-import AboutPageAsync from "./pages/AboutPage";
+import MainPage from "pages/MainPage";
+import AboutPage from "pages/AboutPage";
 
 import './styles/index.scss';
 
@@ -26,8 +26,8 @@ const App: FC = () => {
             <Link to={Routes.ABOUT}>О сайте</Link>
             <Suspense fallback="loading...">
                 <RouteList>
-                    <Route path={Routes.MAIN} element={<MainPageAsync />} />
-                    <Route path={Routes.ABOUT} element={<AboutPageAsync />} />
+                    <Route path={Routes.MAIN} element={<MainPage />} />
+                    <Route path={Routes.ABOUT} element={<AboutPage />} />
                 </RouteList>
             </Suspense>
         </div>
