@@ -1,7 +1,7 @@
 import {useContext} from "react";
 
 import {Themes} from "./constants";
-import {LocalStorageKeys} from "../constants";
+import {LocalStorageKeys} from "shared/lib/constants";
 
 import ThemeContext from "./ThemeContext";
 
