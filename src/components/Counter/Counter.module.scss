@@ -1,0 +1,11 @@
+.count {
+  padding: 20px;
+
+  &__button {
+    color: black;
+
+    &_accent {
+      color: orange;
+    }
+  }
+}
