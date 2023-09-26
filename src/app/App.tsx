@@ -8,7 +8,7 @@ import {RoutePath, AppRoutes} from "shared/config/routeConfig/lib/constants";
 
 import {AppRouter} from "app/providers/Router";
 
-import './styles/index.scss';
+import './styles/_index.scss';
 
 const App: FC = () => {
     const { theme, toggleTheme } = useTheme();
