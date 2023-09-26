@@ -1,7 +1,7 @@
 import {FC, Suspense} from 'react';
 import {Route, RouteProps, Routes as RouteList} from "react-router-dom";
 
-import routeConfig from "shared/config/routeConfig";
+import {routeConfig} from "shared/config/routeConfig";
 
 const routesData: RouteProps[] = Object.values(routeConfig);
 

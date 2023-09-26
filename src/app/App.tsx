@@ -6,7 +6,7 @@ import {joinClassNames} from "shared/lib/utils";
 
 import {RoutePath, AppRoutes} from "shared/config/routeConfig/lib/constants";
 
-import AppRouter from "app/providers/Router";
+import {AppRouter} from "app/providers/Router";
 
 import './styles/index.scss';
 
