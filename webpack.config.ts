@@ -2,7 +2,7 @@ import path from "path";
 import { Configuration } from 'webpack';
 import { BuildEnv, BuildPaths } from "./config/build/types";
 import {BuildModes} from "./config/build/constants";
-import buildWebpackConfig from "./config/build";
+import {buildWebpackConfig} from "./config/build";
 
 const DEFAULT_PORT = 3000;
 
