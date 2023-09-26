@@ -1,14 +1,12 @@
-import {FC, Suspense} from 'react';
-import {Link, Route, Routes as RouteList} from "react-router-dom";
-
-import {joinClassNames} from "shared/lib/utils";
-
-import {Routes} from 'shared/lib/constants';
+import {FC} from 'react';
+import {Link} from "react-router-dom";
 
 import {useTheme} from "app/providers/ThemeProvider";
+import {joinClassNames} from "shared/lib/utils";
 
-import MainPage from "pages/MainPage";
-import AboutPage from "pages/AboutPage";
+import {RoutePath, AppRoutes} from "shared/config/routeConfig/lib/constants";
+
+import AppRouter from "app/providers/Router";
 
 import './styles/index.scss';
 
@@ -22,14 +20,9 @@ const App: FC = () => {
     return (
         <div className={joinClassNames('app', {}, [theme])}>
             <button onClick={handleThemeChange}>Toggle theme</button>
-            <Link to={Routes.MAIN}>Главная</Link>
-            <Link to={Routes.ABOUT}>О сайте</Link>
-            <Suspense fallback="loading...">
-                <RouteList>
-                    <Route path={Routes.MAIN} element={<MainPage />} />
-                    <Route path={Routes.ABOUT} element={<AboutPage />} />
-                </RouteList>
-            </Suspense>
+            <Link to={RoutePath[AppRoutes.MAIN]}>Главная</Link>
+            <Link to={RoutePath[AppRoutes.ABOUT]}>О сайте</Link>
+            <AppRouter />
         </div>
     );
 };
