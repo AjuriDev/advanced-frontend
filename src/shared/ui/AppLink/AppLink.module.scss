@@ -1,0 +1,18 @@
+@import 'app/styles/mixins/_index.scss';
+//TODO разобраться с импортами миксинов
+
+.AppLink {
+  @include reset-link();
+}
+
+.inherit {
+  color: inherit;
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
