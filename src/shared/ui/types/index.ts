@@ -8,4 +8,8 @@ interface Color {
     color?: UIColors;
 }
 
-export { ClassName, Color };
+interface Variant<T> {
+    variant?: T;
+}
+
+export { ClassName, Color, Variant };

@@ -1,0 +1,23 @@
+@import 'app/styles/mixins/_reset.scss';
+//TODO разобраться с импортами миксинов
+
+.Button {
+  @include reset-btn();
+
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: currentColor;
+}

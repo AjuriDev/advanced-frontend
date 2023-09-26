@@ -33,8 +33,38 @@ export default function buildLoaders(options: BuildOptions): RuleSetRule[] {
         ],
     };
 
+    const svgLoader: RuleSetRule = {
+        test: /\.svg$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'preset-default',
+                                params: {
+                                    overrides: {
+                                        removeViewBox: false,
+                                    },
+                                },
+                            },
+                        ],
+                    }
+                }
+            }
+        ],
+    };
+
+    const fileLoader: RuleSetRule = {
+        test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+        use: ['file-loader'],
+    };
+
     return [
         typescriptLoader,
         cssLoader,
+        svgLoader,
+        fileLoader,
     ]
 }

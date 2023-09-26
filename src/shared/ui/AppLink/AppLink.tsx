@@ -10,7 +10,8 @@ import cls from './AppLink.module.scss';
 interface AppLinkProps extends ClassName, Omit<LinkProps, 'color'>, Color {}
 
 const AppLink: FC<AppLinkProps> = (props) => {
-    const { className, color = UIColors.PRIMARY, ...linkProps } = props
+    const { className, color = UIColors.PRIMARY, ...linkProps } = props;
+    
     return (
         <Link className={cn(cls.AppLink, undefined, [className, cls[color]])} {...linkProps} />
     );
