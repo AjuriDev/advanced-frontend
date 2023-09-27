@@ -12,7 +12,8 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "*": ["./src/*"],
+      "react": [ "./node_modules/@types/react" ]
     }
   },
   "ts-node": {

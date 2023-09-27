@@ -1,6 +1,6 @@
 enum BuildModes {
-    PROD = 'production',
-    DEV = 'development',
+  PROD = 'production',
+  DEV = 'development',
 }
 
-export { BuildModes }
+export { BuildModes };

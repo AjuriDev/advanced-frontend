@@ -1,15 +1,15 @@
-import {UIColors} from "../lib/constants";
+import { UIColors } from '../lib/constants';
 
 interface ClassName {
-    className?: string;
+  className?: string;
 }
 
 interface Color {
-    color?: UIColors;
+  color?: UIColors;
 }
 
 interface Variant<T> {
-    variant?: T;
+  variant?: T;
 }
 
 export { ClassName, Color, Variant };
