@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, Suspense} from 'react';
 
 import {joinClassNames} from "shared/lib/utils";
 import {useTheme} from "shared/lib/hooks";
@@ -14,13 +14,15 @@ const App: FC = () => {
 
     return (
         <div className={joinClassNames('app', {}, [theme])}>
-            <header>
-                <Navbar />
-            </header>
-            <div className="app__content">
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback="">
+                <header>
+                    <Navbar />
+                </header>
+                <div className="app__content">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };
