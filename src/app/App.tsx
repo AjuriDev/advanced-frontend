@@ -5,7 +5,7 @@ import {useTheme} from "shared/lib/hooks";
 
 import {AppRouter} from "app/providers/Router";
 import {Navbar} from "widgets/Navbar";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {Sidebar} from "widgets/Sidebar";
 
 import './styles/_index.scss';
 
@@ -14,9 +14,13 @@ const App: FC = () => {
 
     return (
         <div className={joinClassNames('app', {}, [theme])}>
-            <ThemeSwitcher />
-            <Navbar />
-            <AppRouter />
+            <header>
+                <Navbar />
+            </header>
+            <div className="app__content">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };
