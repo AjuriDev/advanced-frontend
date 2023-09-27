@@ -4,7 +4,7 @@ import {ClassName} from "shared/ui/types";
 import {joinClassNames as cn} from "shared/lib/utils";
 import {useTheme} from "shared/lib/hooks";
 
-import Button from "shared/ui/Button";
+import {Button} from "shared/ui";
 import ThemeIcon from 'shared/assets/icons/theme.svg';
 
 import cls from './ThemeSwitcher.module.scss';

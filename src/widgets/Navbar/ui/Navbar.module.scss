@@ -1,7 +1,7 @@
 .Navbar {
   display: flex;
   gap: 1rem;
-  padding: 1.6rem;
+  padding: var(--padding--md);
   color: var(--color-secondary);
   background-color: var(--color-primary);
 }
