@@ -1,5 +1,5 @@
 enum LocalStorageKeys {
-    THEME = 'theme',
+  THEME = 'theme',
 }
 
-export { LocalStorageKeys }
+export { LocalStorageKeys };

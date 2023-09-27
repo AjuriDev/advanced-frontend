@@ -1,5 +1,5 @@
 enum Dividers {
-    CLASS_NAME = ' ',
+  CLASS_NAME = ' ',
 }
 
-export { Dividers }
+export { Dividers };

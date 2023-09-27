@@ -1,1 +1,1 @@
-export {default} from './AppLink';
+export { default } from './AppLink';
