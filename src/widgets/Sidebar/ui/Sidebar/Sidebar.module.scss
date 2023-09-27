@@ -12,3 +12,9 @@
 .opened {
   width: var(--sidebar-width--opened);
 }
+
+.switchers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
