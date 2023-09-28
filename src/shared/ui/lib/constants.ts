@@ -8,4 +8,13 @@ enum UIColors {
   ERROR = 'error',
 }
 
-export { UIColors };
+enum UISizes {
+  XS = 'xs',
+  SM = 'sm',
+  MD = 'md',
+  LG = 'lg',
+  XL = 'xl',
+  XXL = 'xxl',
+}
+
+export { UIColors, UISizes };
