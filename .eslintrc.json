@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "plugin:i18next/recommended",
     "plugin:react/recommended",
     "airbnb",
     "airbnb-typescript"
@@ -17,7 +18,9 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "react"
+    "react",
+    "@typescript-eslint",
+    "i18next"
   ],
   "rules": {
     "import/prefer-default-export": "off",
@@ -28,7 +31,8 @@
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "warn",
     "no-restricted-exports": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "i18next/no-literal-string": ["error", { "markupOnly":  true }]
   },
   "globals": {
     "__IS_DEV__": true

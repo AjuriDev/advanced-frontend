@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { ClassName } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
@@ -13,10 +14,23 @@ interface NavbarProps extends ClassName {}
 
 const Navbar: FC<NavbarProps> = (props) => {
   const { className } = props;
+  const { t: mainPageT } = useTranslation('mainPage');
+  const { t: aboutPageT } = useTranslation('aboutPage');
+
   return (
     <div className={cn(cls.Navbar, undefined, [className])}>
-      <AppLink color={UIColors.SECONDARY} to={RoutePath[AppRoutes.MAIN]}>Главная</AppLink>
-      <AppLink color={UIColors.SECONDARY} to={RoutePath[AppRoutes.ABOUT]}>О сайте</AppLink>
+      <AppLink
+        color={UIColors.SECONDARY}
+        to={RoutePath[AppRoutes.MAIN]}
+      >
+        {mainPageT('pageName')}
+      </AppLink>
+      <AppLink
+        color={UIColors.SECONDARY}
+        to={RoutePath[AppRoutes.ABOUT]}
+      >
+        {aboutPageT('pageName')}
+      </AppLink>
     </div>
   );
 };

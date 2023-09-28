@@ -6,7 +6,7 @@ import routeConfig from 'app/providers/Router/config/routeConfig';
 const routesData: RouteProps[] = Object.values(routeConfig);
 
 const AppRouter: FC = () => (
-  <Suspense fallback="loading...">
+  <Suspense fallback="">
     <RouteList>
       {routesData.map(({ element, path }) => (
         <Route key={path} path={path} element={element} />
