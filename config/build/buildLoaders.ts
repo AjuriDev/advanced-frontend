@@ -8,6 +8,19 @@ export default function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { mode } = options;
   const isDev = isDevMode(mode);
 
+  const babelLoader: RuleSetRule = {
+    test: /\.(?:js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env', { targets: 'defaults' }],
+        ],
+      },
+    },
+  };
+
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -62,6 +75,7 @@ export default function buildLoaders(options: BuildOptions): RuleSetRule[] {
   };
 
   return [
+    babelLoader,
     typescriptLoader,
     cssLoader,
     svgLoader,

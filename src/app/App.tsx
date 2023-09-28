@@ -1,6 +1,6 @@
 import { FC, Suspense } from 'react';
 
-import { joinClassNames } from 'shared/lib/utils';
+import { joinClassNames as cn } from 'shared/lib/utils';
 import { useTheme } from 'shared/lib/hooks';
 
 import { AppRouter } from 'app/providers/Router';
@@ -13,7 +13,7 @@ const App: FC = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={joinClassNames('app', {}, [theme])}>
+    <div className={cn('app', {}, [theme])}>
       <Suspense fallback="">
         <header>
           <Navbar />

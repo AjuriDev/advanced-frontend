@@ -1,4 +1,4 @@
-import { Dividers } from '../constants';
+import { Dividers } from '../../constants';
 
 type Mods = Record<string, boolean | string>;
 
@@ -9,7 +9,6 @@ export default function joinClassNames(
 ): string {
   return [
     cls,
-    ...additional.filter((className) => Boolean(className)),
     ...Object.entries(mods)
       .reduce(
         (additionalClasses, [className, value]) => (value
@@ -17,5 +16,6 @@ export default function joinClassNames(
           : additionalClasses),
         [],
       ),
+    ...additional.filter((className) => Boolean(className)),
   ].join(Dividers.CLASS_NAME);
 }
