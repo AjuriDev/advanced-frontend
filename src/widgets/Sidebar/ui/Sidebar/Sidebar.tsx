@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { ClassName } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
@@ -13,6 +14,7 @@ interface SidebarProps extends ClassName {}
 
 const Sidebar: FC<SidebarProps> = (props) => {
   const { className } = props;
+  const { t } = useTranslation('common');
   const [opened, setOpened] = useState<boolean>(true);
 
   const handleToggle = () => {
@@ -21,7 +23,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
 
   return (
     <div className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}>
-      <Button onClick={handleToggle}>toggle</Button>
+      <Button onClick={handleToggle}>{t('actions.toggle')}</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />

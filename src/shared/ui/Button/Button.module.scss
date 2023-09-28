@@ -1,10 +1,8 @@
-@import 'app/styles/mixins/_reset.scss';
-//TODO разобраться с импортами миксинов
-
 .Button {
-  @include reset-btn();
-
   padding: 0.6rem;
+  border: none;
+  background-color: transparent;
+  text-align: left;
   cursor: pointer;
 }
 
@@ -19,5 +17,5 @@
 .icon {
   width: 2.4rem;
   height: 2.4rem;
-  fill: currentColor;
+  fill: currentcolor;
 }

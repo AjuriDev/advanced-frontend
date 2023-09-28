@@ -80,10 +80,10 @@ img {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
+input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px #fff inset !important;
 }
 
 .visually-hidden {
-  @include visually-hidden();
+  @include visually-hidden;
 }
