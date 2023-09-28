@@ -1,0 +1,129 @@
+@keyframes spinner {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+.SpinnerWrapper {
+  width: 8em;
+  height: 8em;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.xs {
+  font-size: 0.3rem;
+}
+
+.sm {
+  font-size: 0.45rem;
+}
+
+.md {
+  font-size: 0.7rem;
+}
+
+.lg {
+  font-size: 1rem;
+}
+
+.xl {
+  font-size: 1.5rem;
+}
+
+.xxl {
+  font-size: 2rem;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.8);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+
+.spinner div { box-sizing: border-box !important; }
+
+.spinner > div {
+  position: absolute;
+  width: 8em;
+  height: 8em;
+  top: 1em;
+  left: 1em;
+  border-radius: 50%;
+  border: 0.8em solid;
+  border-color: #e15b64 transparent;
+  animation: spinner 1s linear infinite;
+}
+
+.spinner > div:nth-child(4) { border-color: transparent; }
+
+.spinner > div:nth-child(2),
+.spinner > div:nth-child(4) {
+  width: 6.2em;
+  height: 6.2em;
+  top: 1.9em;
+  left: 1.9em;
+  animation: spinner 1s linear infinite reverse;
+}
+
+.spinner > div:nth-child(2) {
+  border-color: transparent #f8b26a;
+}
+.spinner > div:nth-child(3) { border-color: transparent; }
+
+.spinner > div:nth-child(3) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+
+.spinner > div:nth-child(3) div::before,
+.spinner > div:nth-child(3) div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.8em;
+  height: 0.8em;
+  top: -0.8em;
+  left: 2.8em;
+  background: #e15b64;
+  border-radius: 50%;
+  box-shadow: 0 7.2em 0 0 #e15b64;
+}
+
+.spinner > div:nth-child(3) div::after {
+  left: -0.8em;
+  top: 2.8em;
+  box-shadow: 7.2em 0 0 0 #e15b64;
+}
+
+.spinner > div:nth-child(4) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+
+.spinner > div:nth-child(4) div::before,
+.spinner > div:nth-child(4) div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.8em;
+  height: 0.8em;
+  top: -0.8em;
+  left: 1.9em;
+  background: #f8b26a;
+  border-radius: 50%;
+  box-shadow: 0 5.4em 0 0 #f8b26a;
+}
+
+.spinner > div:nth-child(4) div::after {
+  left: -0.8em;
+  top: 1.9em;
+  box-shadow: 5.4em 0 0 0 #f8b26a;
+}

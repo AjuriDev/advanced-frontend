@@ -1,0 +1,45 @@
+@import "../mixins/hidden";
+@import "../mixins/dots-loading";
+@import "../mixins/container";
+
+.app {
+  display: grid;
+  grid-template-rows: min-content auto;
+  row-gap: 2rem;
+  min-height: 100vh;
+  font: var(--font--md);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.app__content {
+  @include container;
+
+  display: grid;
+  grid-template-columns: min-content auto;
+  column-gap: 2rem;
+}
+
+.app > header {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+}
+
+.page {
+  padding: var(--padding--md);
+  border-radius: var(--border-radius--md);
+  background-color: var(--color-secondary);
+}
+
+._container {
+  @include container;
+}
+
+._visually-hidden {
+  @include visually-hidden;
+}
+
+._dots-loading {
+  @include dots-loading;
+}
