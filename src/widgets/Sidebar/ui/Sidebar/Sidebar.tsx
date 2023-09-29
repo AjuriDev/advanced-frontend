@@ -7,6 +7,7 @@ import { joinClassNames as cn } from 'shared/lib/utils';
 import { Button } from 'shared/ui';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { CrushAppButton } from 'features/crushApp';
 
 import cls from './Sidebar.module.scss';
 
@@ -24,6 +25,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <div className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}>
       <Button onClick={handleToggle}>{t('actions.toggle')}</Button>
+      <CrushAppButton />
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
