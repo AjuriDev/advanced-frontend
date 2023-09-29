@@ -4,7 +4,7 @@ import { BuildOptions } from './types';
 
 import { isDevMode } from './utils';
 
-export default function buildLoaders(options: BuildOptions): RuleSetRule[] {
+function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { mode } = options;
   const isDev = isDevMode(mode);
 
@@ -82,3 +82,5 @@ export default function buildLoaders(options: BuildOptions): RuleSetRule[] {
     fileLoader,
   ];
 }
+
+export default buildLoaders;

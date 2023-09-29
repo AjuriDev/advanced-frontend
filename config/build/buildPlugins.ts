@@ -6,10 +6,11 @@ import {
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types';
 import { isDevMode } from './utils';
 
-export default function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
+function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   const { mode, paths } = options;
 
   const isDev = isDevMode(mode);
@@ -26,6 +27,9 @@ export default function buildPlugins(options: BuildOptions): WebpackPluginInstan
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ];
 
   if (isDev) {
@@ -34,3 +38,5 @@ export default function buildPlugins(options: BuildOptions): WebpackPluginInstan
 
   return plugins;
 }
+
+export default buildPlugins;
