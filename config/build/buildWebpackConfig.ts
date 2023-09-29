@@ -7,7 +7,7 @@ import buildDevServer from './buildDevServer';
 
 import { isDevMode } from './utils';
 
-export default function buildWebpackConfig(options: BuildOptions): Configuration {
+function buildWebpackConfig(options: BuildOptions): Configuration {
   const { mode, paths } = options;
   const isDev = isDevMode(mode);
 
@@ -28,3 +28,5 @@ export default function buildWebpackConfig(options: BuildOptions): Configuration
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 }
+
+export default buildWebpackConfig;
