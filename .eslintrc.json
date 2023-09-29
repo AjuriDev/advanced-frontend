@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:i18next/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "i18next"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "no-restricted-exports": "off",
+    "import/no-extraneous-dependencies": "off",
+    "i18next/no-literal-string": ["error", { "markupOnly": true }],
+    "max-len": ["error", { "ignoreComments": true }]
+  },
+  "globals": {
+    "__IS_DEV__": true
+  }
+}

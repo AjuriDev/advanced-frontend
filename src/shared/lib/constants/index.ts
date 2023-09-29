@@ -1,14 +1,4 @@
-enum Routes {
-    MAIN = '/',
-    ABOUT = '/about',
-}
-
-enum LocalStorageKeys {
-    THEME = 'theme',
-}
-
-enum Dividers {
-    CLASS_NAME = ' ',
-}
-
-export { Routes, LocalStorageKeys, Dividers };
+export * from './common';
+export * from './storage';
+export * from './router';
+export * from './theme';

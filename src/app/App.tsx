@@ -1,37 +1,28 @@
-import {FC, Suspense} from 'react';
-import {Link, Route, Routes as RouteList} from "react-router-dom";
+import { FC } from 'react';
 
-import {joinClassNames} from "shared/lib/utils";
+import { joinClassNames as cn } from 'shared/lib/utils';
+import { useTheme } from 'shared/lib/hooks';
 
-import {Routes} from 'shared/lib/constants';
+import { AppRouter } from 'app/providers/Router';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
-import {useTheme} from "app/providers/ThemeProvider";
-
-import MainPage from "pages/MainPage";
-import AboutPage from "pages/AboutPage";
-
-import './styles/index.scss';
+import './styles/_index.scss';
 
 const App: FC = () => {
-    const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
-    const handleThemeChange = () => {
-        toggleTheme();
-    }
-
-    return (
-        <div className={joinClassNames('app', {}, [theme])}>
-            <button onClick={handleThemeChange}>Toggle theme</button>
-            <Link to={Routes.MAIN}>Главная</Link>
-            <Link to={Routes.ABOUT}>О сайте</Link>
-            <Suspense fallback="loading...">
-                <RouteList>
-                    <Route path={Routes.MAIN} element={<MainPage />} />
-                    <Route path={Routes.ABOUT} element={<AboutPage />} />
-                </RouteList>
-            </Suspense>
-        </div>
-    );
+  return (
+    <div className={cn('app', {}, [theme])}>
+      <header>
+        <Navbar />
+      </header>
+      <div className="app__content">
+        <Sidebar />
+        <AppRouter />
+      </div>
+    </div>
+  );
 };
 
 export default App;

@@ -1,8 +1,8 @@
-import path from "path";
+import path from 'path';
 import { Configuration } from 'webpack';
-import { BuildEnv, BuildPaths } from "./config/build/types";
-import {BuildModes} from "./config/build/constants";
-import buildWebpackConfig from "./config/build";
+import { BuildEnv, BuildPaths } from './config/build/types';
+import { BuildModes } from './config/build/constants';
+import { buildWebpackConfig } from './config/build';
 
 const DEFAULT_PORT = 3000;
 
@@ -11,7 +11,7 @@ const paths: BuildPaths = {
   build: path.resolve(__dirname, 'build'),
   html: path.resolve(__dirname, 'public', 'index.html'),
   src: path.resolve(__dirname, 'src'),
-}
+};
 
 export default (env: BuildEnv): Configuration => {
   const { port, mode } = env;

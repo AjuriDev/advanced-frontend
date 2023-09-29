@@ -1,3 +1,1 @@
-import joinClassNames from "./joinClassNames";
-
-export { joinClassNames };
+export { default as joinClassNames } from './joinClassNames';

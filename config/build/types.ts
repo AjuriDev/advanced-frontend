@@ -1,23 +1,23 @@
-import {BuildModes} from "./constants";
+import { BuildModes } from './constants';
 
 type Port = number;
 
 interface BuildPaths {
-    entry: string;
-    build: string;
-    html: string;
-    src: string;
+  entry: string;
+  build: string;
+  html: string;
+  src: string;
 }
 
 interface BuildEnv {
-    port: Port;
-    mode: BuildModes;
+  port: Port;
+  mode: BuildModes;
 }
 
 interface BuildOptions {
-    mode: BuildModes;
-    paths: BuildPaths;
-    port: Port;
+  mode: BuildModes;
+  paths: BuildPaths;
+  port: Port;
 }
 
-export { BuildPaths, BuildEnv, BuildOptions }
+export { BuildPaths, BuildEnv, BuildOptions };

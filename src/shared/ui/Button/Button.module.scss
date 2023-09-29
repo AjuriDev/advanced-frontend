@@ -1,0 +1,21 @@
+.Button {
+  padding: 0.6rem;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: currentcolor;
+}

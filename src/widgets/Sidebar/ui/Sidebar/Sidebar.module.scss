@@ -1,0 +1,20 @@
+.Sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + var(--main-layout-gap));
+  padding: var(--padding--md);
+  width: var(--sidebar-width--closed);
+  height: calc(100vh - var(--header-height) - var(--main-layout-gap));
+  border-radius: var(--border-radius--md);
+  background-color: var(--color-secondary);
+  transition: width var(--transition-daration);
+}
+
+.opened {
+  width: var(--sidebar-width--opened);
+}
+
+.switchers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

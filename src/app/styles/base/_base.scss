@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(10px + 13 * (100vw - 375px) / 447);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    font-size: calc(10px + 4 * (100vw - 768px) / 255);
+  }
+
+  @media (min-width: 1024px) and (max-width: 1360px) {
+    font-size: calc(8px + 2 * (100vw - 1024px) / 336);
+  }
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #fff inset !important;
+}

@@ -1,15 +1,22 @@
-import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
+import { SuspenseProvider } from 'app/providers/SuspenseProvider';
+import { ErrorBoundaryProvider } from 'app/providers/ErrorBoundaryProvider';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
+import App from './app/App';
 
-import App from "./app/App";
-import ThemeProvider from "app/providers/ThemeProvider";
+import 'shared/config/i18n';
 
 render(
-    <BrowserRouter>
+  <BrowserRouter>
+    <SuspenseProvider>
+      <ErrorBoundaryProvider>
         <ThemeProvider>
-            <App />
+          <App />
         </ThemeProvider>
-    </BrowserRouter>,
-    document.querySelector('#root')
+      </ErrorBoundaryProvider>
+    </SuspenseProvider>
+  </BrowserRouter>,
+  document.querySelector('#root'),
 );

@@ -1,2 +1,9 @@
-declare module "*.module.css";
-declare module "*.module.scss";
+declare module '*.module.scss' {
+  interface ClassNames {
+    [className: string]: string
+  }
+  const classNames: ClassNames;
+  export = classNames;
+}
+
+declare const __IS_DEV__: boolean;
