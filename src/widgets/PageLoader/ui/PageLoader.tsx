@@ -15,7 +15,7 @@ const PageLoader: FC<PageLoaderProps> = (props) => {
 
   return (
     <div className={cn(cls.PageLoader, undefined, [className])}>
-      <Spinner size={UISizes.XXL} />
+      <Spinner size={UISizes.XL} />
     </div>
   );
 };
