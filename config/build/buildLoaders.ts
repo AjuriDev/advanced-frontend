@@ -9,13 +9,13 @@ function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const isDev = isDevMode(mode);
 
   const babelLoader: RuleSetRule = {
-    test: /\.(?:js|ts|jsx|tsx)$/,
+    test: /\.(?:js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
         presets: [
-          ['@babel/preset-env', { targets: 'defaults' }],
+          ['@babel/preset-env'],
         ],
       },
     },
@@ -75,11 +75,11 @@ function buildLoaders(options: BuildOptions): RuleSetRule[] {
   };
 
   return [
-    babelLoader,
-    typescriptLoader,
     cssLoader,
     svgLoader,
     fileLoader,
+    babelLoader,
+    typescriptLoader,
   ];
 }
 

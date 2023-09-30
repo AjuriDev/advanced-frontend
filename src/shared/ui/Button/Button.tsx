@@ -2,9 +2,10 @@ import { ButtonHTMLAttributes, FC, SVGAttributes } from 'react';
 
 import { ClassName, Color, Variant } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
-import { ButtonVariants } from 'shared/ui/Button/lib/constants';
-
 import { UIColors } from 'shared/ui/lib/constants';
+import { ButtonTestIds } from './lib/tests';
+import { ButtonVariants } from './lib/constants';
+
 import cls from './Button.module.scss';
 
 interface ButtonProps extends
@@ -28,6 +29,7 @@ const Button: FC<ButtonProps> = (props) => {
 
   return (
     <button
+      data-testid={ButtonTestIds.ROOT}
       className={cn(
         cls.Button,
         undefined,

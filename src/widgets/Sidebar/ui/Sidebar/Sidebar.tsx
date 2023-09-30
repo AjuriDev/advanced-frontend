@@ -9,6 +9,8 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { CrushAppButton } from 'features/crushApp';
 
+import { SidebarTestIds } from './lib/tests';
+
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps extends ClassName {}
@@ -23,10 +25,18 @@ const Sidebar: FC<SidebarProps> = (props) => {
   };
 
   return (
-    <div className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}>
-      <Button onClick={handleToggle}>{t('actions.toggle')}</Button>
+    <div
+      data-testid={SidebarTestIds.ROOT}
+      className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}
+    >
+      <Button
+        data-testid={SidebarTestIds.TOGGLE_BUTTON}
+        onClick={handleToggle}
+      >
+        {t('actions.toggle')}
+      </Button>
       <CrushAppButton />
-      <div className={cls.switchers}>
+      <div data-testid="sffs" className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
