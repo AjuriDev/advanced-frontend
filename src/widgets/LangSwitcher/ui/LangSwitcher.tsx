@@ -10,8 +10,8 @@ const LangSwitcher: FC<LangSwitcherProps> = (props) => {
   const { className } = props;
   const { t, i18n } = useTranslation();
 
-  const handleLangToggle = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+  const handleLangToggle = async () => {
+    await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
   return (

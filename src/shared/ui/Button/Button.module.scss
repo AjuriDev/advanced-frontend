@@ -1,9 +1,32 @@
 .Button {
-  padding: 0.6rem;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius--md);
   background-color: transparent;
   text-align: left;
   cursor: pointer;
+  transition:
+    color var(--transition-daration),
+    border-color var(--transition-daration),
+    background-color var(--transition-daration);
+}
+
+// variants
+.text {
+  padding: 0;
+}
+
+.filled {
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+
+.outlined {
+  border-color: var(--color-secondary);
+  background-color: transparent;
 }
 
 .primary {

@@ -1,4 +1,6 @@
-import joinClassNames from './joinClassNames';
+// import joinClassNames from './joinClassNames';
+
+import { joinClassNames } from 'shared/lib/utils';
 
 describe('classNames', () => {
   test('with only first param', () => {

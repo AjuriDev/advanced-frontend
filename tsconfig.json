@@ -17,6 +17,10 @@
     },
     "lib": ["dom", "ESNext", "WebWorker"]
   },
+  "include": [
+    "src/**/*", "./config/jest/setupJest.ts",
+    "./__mocks__/svgMock.tsx"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
