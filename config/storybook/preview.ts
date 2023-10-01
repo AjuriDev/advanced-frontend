@@ -11,6 +11,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    layout: 'centered',
     themes: {
       default: Themes.DARK,
       list: [
