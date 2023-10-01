@@ -18,7 +18,12 @@
     "lib": ["dom", "ESNext", "WebWorker"]
   },
   "include": [
-    "src/**/*", "./config/jest/setupJest.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "config/**/*.ts",
+    "config/**/*.tsx",
+    "storybook/**/*.ts",
+    "storybook/**/*.tsx",
     "./__mocks__/svgMock.tsx"
   ],
   "ts-node": {
