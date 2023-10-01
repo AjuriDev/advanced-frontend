@@ -12,11 +12,13 @@ const paths: BuildPaths = {
   src: path.resolve(__dirname, '../../src'),
 };
 
-export default ({ config }: { config: Configuration }) => {
+const DEFAULT_PORT = 6006;
+
+export default ({config}: { config: Configuration }) => {
   const options: BuildOptions = {
     mode: BuildModes.DEV,
     paths,
-    port: 6006,
+    port: DEFAULT_PORT,
   }
 
   if (!config.resolve) config.resolve = {};

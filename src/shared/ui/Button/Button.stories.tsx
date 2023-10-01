@@ -8,9 +8,6 @@ const meta: Meta<typeof Button> = {
   title: 'shared/Button',
   component: Button,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'center',
-  },
   args: {
     children: 'Button',
   },
