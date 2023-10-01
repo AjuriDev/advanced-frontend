@@ -8,7 +8,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types';
-import { isDevMode } from './utils';
+import { isDevMode } from './lib/utils';
 
 function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   const { mode, paths } = options;
