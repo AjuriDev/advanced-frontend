@@ -10,7 +10,7 @@ const meta: Meta<typeof AboutPage> = {
 
 type Story = StoryObj<typeof meta>;
 
-const Dark: Story = {};
+const Default: Story = {};
 
-export { Dark };
+export { Default };
 export default meta;
