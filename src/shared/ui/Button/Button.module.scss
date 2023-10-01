@@ -25,7 +25,7 @@
 }
 
 .outlined {
-  border-color: var(--color-secondary);
+  border-color: currentColor;
   background-color: transparent;
 }
 
@@ -40,5 +40,5 @@
 .icon {
   width: 2.4rem;
   height: 2.4rem;
-  fill: currentcolor;
+  fill: currentColor;
 }

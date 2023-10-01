@@ -1,6 +1,11 @@
 enum Themes {
-  LIGHT = 'light',
   DARK = 'dark',
+  LIGHT = 'light',
 }
 
-export { Themes };
+const themeClassNames: Record<Themes, string> = {
+  [Themes.DARK]: 'theme--dark',
+  [Themes.LIGHT]: 'theme--light',
+};
+
+export { Themes, themeClassNames };
