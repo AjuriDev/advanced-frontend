@@ -7,7 +7,6 @@ import Button from './Button';
 describe('Button', () => {
   test('render', () => {
     render(<Button />);
-    render(<Button>test</Button>);
     expect(screen.getByTestId(ButtonTestIds.ROOT)).toBeInTheDocument();
   });
 
