@@ -67,7 +67,8 @@
     },
     {
       "files": [
-        "**/config/**/*.{ts,tsx}"
+        "**/config/**/*.{ts,tsx}",
+        "__mocks__/**/*.{ts,tsx}"
       ],
       "rules": {
         "react/display-name": "off"
