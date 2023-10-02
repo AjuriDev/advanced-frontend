@@ -14,26 +14,32 @@ jobs:
         node-version: [ 17.x ]
     steps:
       - uses: actions/checkout@v3
+
       - name: Starting Node.js @{{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install modules
-      - uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v4
         with:
           cmd: install
+
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
           cmd: build:prod
+
       - name: Linting typescript
         uses: borales/actions-yarn@v4
         with:
           cmd: lint:ts
+
       - name: Linting style
         uses: borales/actions-yarn@v4
         with:
           cmd: lint:scss
+
       - name: Unit testing
         uses: borales/actions-yarn@v4
         with:
