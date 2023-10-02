@@ -45,11 +45,6 @@ jobs:
         with:
           cmd: test:unit
 
-      - name: Build storybook
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: storybook:build
-
       - name: UI testing
         uses: borales/actions-yarn@v4
         with:
