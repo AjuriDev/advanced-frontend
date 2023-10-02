@@ -24,7 +24,9 @@
     "config/**/*.tsx",
     "storybook/**/*.ts",
     "storybook/**/*.tsx",
-    "./__mocks__/svgMock.tsx"
+    "__mocks__/**/*.ts",
+    "__mocks__/**/*.tsx",
+    "webpack.config.ts"
   ],
   "ts-node": {
     "compilerOptions": {
