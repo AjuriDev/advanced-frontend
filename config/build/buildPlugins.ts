@@ -27,13 +27,11 @@ function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ];
 
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
 
   return plugins;
