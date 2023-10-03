@@ -38,7 +38,7 @@ jobs:
       - name: Linting style
         uses: borales/actions-yarn@v4
         with:
-          cmd: lint:scss
+          cmd: lint:css
 
       - name: Unit testing
         uses: borales/actions-yarn@v4

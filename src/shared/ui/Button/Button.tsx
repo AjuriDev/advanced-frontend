@@ -1,8 +1,13 @@
 import { ButtonHTMLAttributes, FC, SVGAttributes } from 'react';
 
-import { ClassName, Color, Variant } from 'shared/ui/types';
+import {
+  ClassName,
+  Color,
+  Variant,
+  Size,
+} from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
-import { UIColors } from 'shared/ui/lib/constants';
+import { UIColors, UISizes } from 'shared/ui/lib/constants';
 import { ButtonTestIds } from './lib/tests';
 import { ButtonVariants } from './lib/constants';
 
@@ -12,8 +17,9 @@ interface ButtonProps extends
   ClassName,
   Color,
   Variant<ButtonVariants>,
+  Size,
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
-  Icon?: FC<SVGAttributes<SVGElement>>
+  Icon?: FC<SVGAttributes<SVGElement>>;
 }
 
 const Button: FC<ButtonProps> = (props) => {
@@ -22,6 +28,7 @@ const Button: FC<ButtonProps> = (props) => {
     type,
     color = UIColors.PRIMARY,
     variant = ButtonVariants.TEXT,
+    size = UISizes.MD,
     Icon,
     children,
     ...buttonProps
@@ -33,12 +40,12 @@ const Button: FC<ButtonProps> = (props) => {
       className={cn(
         cls.Button,
         undefined,
-        [className, cls[color], cls[variant]],
+        [className, cls[color], cls[variant], cls[size]],
       )}
       type="button"
       {...buttonProps}
     >
-      {children}
+      {children && <span>{children}</span>}
       {Icon && <Icon className={cls.icon} />}
     </button>
   );

@@ -12,9 +12,11 @@
   --main-layout-gap: 2rem;
   --padding--md: 1.6rem;
   --padding--lg: 2.4rem;
-  --border-radius--sm: 0.2rem;
-  --border-radius--md: 0.4rem;
-  --border-radius--lg: 0.6rem;
+  --border-radius--sm: 0.2em;
+  --border-radius--md: 0.4em;
+  --border-radius--lg: 0.6em;
   --content-width: 144rem;
-  --transition-daration: 250ms;
+  --transition-daration--normal: 250ms;
+  --transition-daration--short: 150ms;
+  --transition-daration--long: 500ms;
 }

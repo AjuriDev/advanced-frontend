@@ -1,32 +1,91 @@
 .Button {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.6rem 0.8rem;
+  gap: 0.8em;
+  padding: 0.5em 1em;
   border: 1px solid transparent;
   border-radius: var(--border-radius--md);
   background-color: transparent;
+  font-weight: 700;
   text-align: left;
   cursor: pointer;
   transition:
-    color var(--transition-daration),
-    border-color var(--transition-daration),
-    background-color var(--transition-daration);
+    color var(--transition-daration--normal),
+    border-color var(--transition-daration--normal),
+    background-color var(--transition-daration--normal);
+
+  > span {
+    font-size: 1.6em;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: var(--border-radius--md);
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition:
+      background-color var(--transition-daration--normal),
+      opacity var(--transition-daration--normal);
+  }
+
+  &:active::after {
+    transition-duration: var(--transition-daration--short);
+  }
+
+  &:hover::after {
+    opacity: 0.1;
+  }
+
+  &:hover:active::after {
+    opacity: 0.2;
+  }
 }
 
-// variants
-.text {
-  padding: 0;
+.icon {
+  width: 2em;
+  height: 2em;
+  fill: currentColor;
+
+  &:only-child {
+    margin: 0 -0.5em;
+  }
 }
 
-.filled {
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
+// sizes
+.xs {
+  font-size: 0.6rem;
 }
 
-.outlined {
-  border-color: currentColor;
-  background-color: transparent;
+.sm {
+  font-size: 0.8rem;
+}
+
+.md {
+  font-size: 1rem;
+}
+
+.lg {
+  font-size: 1.2rem;
+}
+
+.xl {
+  font-size: 1.5rem;
+}
+
+.xxl {
+  font-size: 2rem;
+}
+
+// colors
+.inherit {
+  color: inherit;
 }
 
 .primary {
@@ -37,8 +96,58 @@
   color: var(--color-secondary);
 }
 
-.icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  fill: currentColor;
+.accent {
+  color: var(--color-accent);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+// variants
+.filled {
+  border-color: currentColor;
+  background-color: currentColor;
+
+  &:not(.secondary) > span,
+  &:not(.secondary) > .icon {
+    color: var(--color-secondary);
+  }
+
+  &:not(.secondary)::after {
+    opacity: 0.2;
+    background-color: var(--color-secondary);
+  }
+
+  &:not(.secondary):hover::after {
+    opacity: 0.1;
+  }
+
+  &:not(.secondary):hover:active::after {
+    opacity: 0;
+  }
+
+  &.secondary {
+    > span,
+    > .icon {
+      color: var(--color-primary);
+    }
+
+    &::after {
+      background-color: var(--color-primary);
+    }
+  }
+}
+
+.outlined {
+  border-color: currentColor;
+  background-color: transparent;
 }
