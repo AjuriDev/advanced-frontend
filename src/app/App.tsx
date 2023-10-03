@@ -1,16 +1,14 @@
 import { FC } from 'react';
 
 import { AppRouter } from 'app/providers/Router';
-import { Navbar } from 'widgets/Navbar';
+import { Header } from 'widgets/Header';
 import { Sidebar } from 'widgets/Sidebar';
 
 import './styles/_index.scss';
 
 const App: FC = () => (
   <div className="'app'">
-    <header>
-      <Navbar />
-    </header>
+    <Header />
     <div className="app__content">
       <Sidebar />
       <AppRouter />

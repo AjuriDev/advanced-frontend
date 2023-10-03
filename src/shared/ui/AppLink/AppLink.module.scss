@@ -1,6 +1,15 @@
 .AppLink {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   color: inherit;
   text-decoration: none;
+}
+
+.icon {
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem;
 }
 
 .inherit {

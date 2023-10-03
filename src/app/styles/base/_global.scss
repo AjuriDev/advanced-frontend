@@ -17,12 +17,6 @@
   column-gap: 2rem;
 }
 
-.app > header {
-  position: sticky;
-  top: 0;
-  height: var(--header-height);
-}
-
 .page {
   padding: var(--padding--md);
   border-radius: var(--border-radius--md);

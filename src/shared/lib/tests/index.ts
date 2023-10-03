@@ -1,2 +1,2 @@
-export { default as renderWithTranslation }
-  from './renderWithTranslation/renderWithTranslation';
+export { default as renderComponent }
+  from './renderComponent/renderComponent';

@@ -1,10 +1,11 @@
-import { ButtonHTMLAttributes, FC, SVGAttributes } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 
 import {
   ClassName,
   Color,
   Variant,
   Size,
+  IconComponent,
 } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
 import { UIColors, UISizes } from 'shared/ui/lib/constants';
@@ -18,9 +19,8 @@ interface ButtonProps extends
   Color,
   Variant<ButtonVariants>,
   Size,
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
-  Icon?: FC<SVGAttributes<SVGElement>>;
-}
+  IconComponent,
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
 
 const Button: FC<ButtonProps> = (props) => {
   const {

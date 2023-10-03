@@ -1,5 +1,10 @@
 {
   "lang": "Русский",
+  "langShort": "Ру",
+  "pageNames": {
+    "main": "Главная",
+    "about": "О сайте"
+  },
   "rootError": {
     "title": "Что-то пошло не так",
     "reloadPage": "Обновить страницу"
