@@ -38,7 +38,9 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font: var(--font--md);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
 }
 
 img {
