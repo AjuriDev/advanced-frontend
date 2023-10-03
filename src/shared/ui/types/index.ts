@@ -1,3 +1,4 @@
+import { FC, SVGAttributes } from 'react';
 import { UIColors, UISizes } from '../lib/constants';
 
 interface ClassName {
@@ -16,6 +17,14 @@ interface Size {
   size?: UISizes;
 }
 
+interface IconComponent {
+  Icon?: FC<SVGAttributes<SVGElement>>;
+}
+
 export {
-  ClassName, Color, Variant, Size,
+  ClassName,
+  Color,
+  Variant,
+  Size,
+  IconComponent,
 };

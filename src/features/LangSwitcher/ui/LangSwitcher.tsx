@@ -19,7 +19,7 @@ const LangSwitcher: FC<LangSwitcherProps> = (props) => {
       className={className}
       onClick={handleLangToggle}
     >
-      {t('lang')}
+      {t('langShort')}
     </Button>
   );
 };
