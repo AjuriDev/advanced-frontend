@@ -5,6 +5,10 @@
 /build
 /storybook-static
 
+# development
+.loki/report.html
+.loki/report.json
+
 # package managers
 .pnp.*
 .yarn/*
