@@ -52,7 +52,7 @@
       }
     ]
   },
-  "ignorePatterns": ["*/config/**/*", "*/storybook/**/*", "*/__mocks__/**/*"],
+  "ignorePatterns": ["scripts/**/*"],
   "globals": {
     "__IS_DEV__": true
   },
@@ -71,6 +71,7 @@
         "__mocks__/**/*.{ts,tsx}"
       ],
       "rules": {
+        "no-param-reassign": "off",
         "react/display-name": "off"
       }
     }
