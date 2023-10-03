@@ -7,9 +7,6 @@
   grid-template-rows: min-content auto;
   row-gap: 2rem;
   min-height: 100vh;
-  font: var(--font--md);
-  background-color: var(--color-bg);
-  color: var(--color-primary);
 }
 
 .app__content {
@@ -18,12 +15,6 @@
   display: grid;
   grid-template-columns: min-content auto;
   column-gap: 2rem;
-}
-
-.app > header {
-  position: sticky;
-  top: 0;
-  height: var(--header-height);
 }
 
 .page {

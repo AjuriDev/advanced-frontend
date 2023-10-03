@@ -1,4 +1,4 @@
-import { BuildModes } from './constants';
+import { BuildModes } from './lib/constants';
 
 type Port = number;
 

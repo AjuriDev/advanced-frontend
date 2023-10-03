@@ -1,19 +1,26 @@
-import { ButtonHTMLAttributes, FC, SVGAttributes } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 
-import { ClassName, Color, Variant } from 'shared/ui/types';
+import {
+  ClassName,
+  Color,
+  Variant,
+  Size,
+  IconComponent,
+} from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
-import { ButtonVariants } from 'shared/ui/Button/lib/constants';
+import { UIColors, UISizes } from 'shared/ui/lib/constants';
+import { ButtonTestIds } from './lib/tests';
+import { ButtonVariants } from './lib/constants';
 
-import { UIColors } from 'shared/ui/lib/constants';
 import cls from './Button.module.scss';
 
 interface ButtonProps extends
   ClassName,
   Color,
   Variant<ButtonVariants>,
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
-  Icon?: FC<SVGAttributes<SVGElement>>
-}
+  Size,
+  IconComponent,
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
 
 const Button: FC<ButtonProps> = (props) => {
   const {
@@ -21,6 +28,7 @@ const Button: FC<ButtonProps> = (props) => {
     type,
     color = UIColors.PRIMARY,
     variant = ButtonVariants.TEXT,
+    size = UISizes.MD,
     Icon,
     children,
     ...buttonProps
@@ -28,15 +36,16 @@ const Button: FC<ButtonProps> = (props) => {
 
   return (
     <button
+      data-testid={ButtonTestIds.ROOT}
       className={cn(
         cls.Button,
         undefined,
-        [className, cls[color], cls[variant]],
+        [className, cls[color], cls[variant], cls[size]],
       )}
       type="button"
       {...buttonProps}
     >
-      {children}
+      {children && <span>{children}</span>}
       {Icon && <Icon className={cls.icon} />}
     </button>
   );
