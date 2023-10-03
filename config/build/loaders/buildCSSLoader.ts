@@ -17,7 +17,7 @@ function buildCSSLoader(options: BuildOptions): RuleSetRule {
           modules: {
             auto: (filename: string) => Boolean(filename.includes('.module.')),
             localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
+              ? '[local]([hash:base64:4])'
               : '[hash:base64:8]',
           },
         },

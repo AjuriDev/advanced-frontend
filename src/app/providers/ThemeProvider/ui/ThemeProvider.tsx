@@ -1,10 +1,18 @@
-import { FC, useState, useMemo } from 'react';
+import {
+  FC, useState, useEffect, useMemo,
+} from 'react';
 
-import { LocalStorageKeys, Themes } from 'shared/lib/constants';
+import {
+  LocalStorageKeys,
+  Themes,
+  themeClassNames,
+} from 'shared/lib/constants';
 import { ThemeContext } from 'shared/lib/contexts';
 
 const initialTheme = localStorage.getItem(LocalStorageKeys.THEME) as Themes
-    || Themes.LIGHT;
+    || Themes.DARK;
+
+const appBodyEl = document.querySelector('#app-body');
 
 const ThemeProvider: FC = (props) => {
   const { children } = props;
@@ -14,6 +22,11 @@ const ThemeProvider: FC = (props) => {
     theme,
     setTheme,
   }), [theme]);
+
+  useEffect(() => {
+    appBodyEl.classList.remove(...Object.values(themeClassNames));
+    appBodyEl.classList.add(themeClassNames[theme]);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={memoizedValue}>

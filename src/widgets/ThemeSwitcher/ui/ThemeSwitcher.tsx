@@ -1,3 +1,4 @@
+// eslint-disable i18next/no-literal-string
 import { FC } from 'react';
 
 import { ClassName } from 'shared/ui/types';
@@ -5,6 +6,7 @@ import { useTheme } from 'shared/lib/hooks';
 
 import { Button } from 'shared/ui';
 import ThemeIcon from 'shared/assets/icons/theme.svg';
+import { UISizes } from 'shared/ui/lib/constants';
 
 interface ThemeSwitcherProps extends ClassName {}
 
@@ -17,12 +19,12 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
   };
 
   return (
-    <div className={className}>
-      <Button
-        onClick={handleThemeChange}
-        Icon={ThemeIcon}
-      />
-    </div>
+    <Button
+      className={className}
+      onClick={handleThemeChange}
+      Icon={ThemeIcon}
+      size={UISizes.LG}
+    />
   );
 };
 

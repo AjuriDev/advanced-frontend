@@ -7,7 +7,6 @@ import { joinClassNames as cn } from 'shared/lib/utils';
 import { Button } from 'shared/ui';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { CrushAppButton } from 'features/crushApp';
 
 import { SidebarTestIds } from './lib/tests';
 
@@ -35,8 +34,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
       >
         {t('actions.toggle')}
       </Button>
-      <CrushAppButton />
-      <div data-testid="sffs" className={cls.switchers}>
+      <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
