@@ -23,7 +23,7 @@ const AppLink: FC<AppLinkProps> = (props) => {
       className={cn(cls.AppLink, undefined, [className, cls[color]])}
       {...linkProps}
     >
-      <Icon className={cls.icon} />
+      {Icon && <Icon className={cls.icon} />}
       {children}
     </Link>
   );
