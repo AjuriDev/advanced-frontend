@@ -6,7 +6,10 @@ interface PortalProps {
 }
 
 const Portal: FC<PortalProps> = (props) => {
-  const { element = document.body, children } = props;
+  const { element, children } = props;
+
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  if (!element) return <>{children}</>;
 
   return createPortal(children, element);
 };
