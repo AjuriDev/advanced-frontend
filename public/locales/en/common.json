@@ -1,6 +1,7 @@
 {
   "actions": {
-    "toggle": "Toggle"
+    "toggle": "Toggle",
+    "open": "Open"
   },
   "loading": "Loading"
 }

@@ -17,8 +17,9 @@ function buildCSSLoader(options: BuildOptions): RuleSetRule {
           modules: {
             auto: (filename: string) => Boolean(filename.includes('.module.')),
             localIdentName: isDev
-              ? '[local]([hash:base64:4])'
+              ? '[folder]__[local]([hash:base64:3])'
               : '[hash:base64:8]',
+            exportLocalsConvention: 'camelCase',
           },
         },
       },

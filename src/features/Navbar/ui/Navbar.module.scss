@@ -1,4 +1,4 @@
-.Navbar {
+.root {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -11,7 +11,7 @@
     width var(--transition-daration--short);
 }
 
-.onlyIcon {
+.only-icon {
   .text {
     opacity: 0;
     width: 0;

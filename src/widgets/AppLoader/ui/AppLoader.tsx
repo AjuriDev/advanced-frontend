@@ -14,7 +14,7 @@ const AppLoader: FC<AppLoaderProps> = (props) => {
   const { className } = props;
 
   return (
-    <div className={cn(cls.AppLoader, undefined, [className])}>
+    <div className={cn(cls.root, undefined, [className])}>
       <Spinner size={UISizes.XXL} />
     </div>
   );

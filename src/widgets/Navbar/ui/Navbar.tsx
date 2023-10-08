@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ClassName } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
 import { AppRoutes, RoutePath } from 'shared/lib/constants';
-import { UIColors } from 'shared/ui/lib/constants';
+import { UIViewTypes } from 'shared/ui/lib/constants';
 
 import { AppLink } from 'shared/ui';
 
@@ -18,15 +18,15 @@ const Navbar: FC<NavbarProps> = (props) => {
   const { t: aboutPageT } = useTranslation('aboutPage');
 
   return (
-    <div className={cn(cls.Navbar, undefined, [className])}>
+    <div className={cn(cls.root, undefined, [className])}>
       <AppLink
-        color={UIColors.SECONDARY}
+        view={UIViewTypes.SECONDARY}
         to={RoutePath[AppRoutes.MAIN]}
       >
         {mainPageT('pageName')}
       </AppLink>
       <AppLink
-        color={UIColors.SECONDARY}
+        view={UIViewTypes.SECONDARY}
         to={RoutePath[AppRoutes.ABOUT]}
       >
         {aboutPageT('pageName')}

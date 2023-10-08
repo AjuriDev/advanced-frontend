@@ -1,12 +1,12 @@
 import { FC, SVGAttributes } from 'react';
-import { UIColors, UISizes } from '../lib/constants';
+import { UIViewTypes, UISizes } from '../lib/constants';
 
 interface ClassName {
   className?: string;
 }
 
-interface Color {
-  color?: UIColors;
+interface View {
+  view?: UIViewTypes;
 }
 
 interface Variant<T> {
@@ -23,7 +23,7 @@ interface IconComponent {
 
 export {
   ClassName,
-  Color,
+  View,
   Variant,
   Size,
   IconComponent,

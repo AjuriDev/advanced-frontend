@@ -13,7 +13,7 @@ const Spinner: FC<SpinnerProps> = (props) => {
 
   return (
     <div className={cn(
-      cls.SpinnerWrapper,
+      cls.root,
       undefined,
       [cls[size], className],
     )}

@@ -3,3 +3,5 @@ export { default as Button } from './Button';
 export { default as TextLoader } from './TextLoader';
 export { default as Spinner } from './Spinner';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as Modal } from './Modal';
+export { default as Portal } from './Portal';

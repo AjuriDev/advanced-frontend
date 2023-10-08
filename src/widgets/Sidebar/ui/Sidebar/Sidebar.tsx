@@ -27,7 +27,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <div
       data-testid={SidebarTestIds.ROOT}
-      className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}
+      className={cn(cls.root, { [cls._opened]: opened }, [className])}
     >
       <Button
         data-testid={SidebarTestIds.TOGGLE_BUTTON}

@@ -1,4 +1,4 @@
-.Button {
+.root {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -58,84 +58,84 @@
   }
 }
 
-// sizes
-.xs {
+// Sizes
+._xs {
   font-size: 0.6rem;
 }
 
-.sm {
+._sm {
   font-size: 0.8rem;
 }
 
-.md {
+._md {
   font-size: 1rem;
 }
 
-.lg {
+._lg {
   font-size: 1.2rem;
 }
 
-.xl {
+._xl {
   font-size: 1.5rem;
 }
 
-.xxl {
+._xxl {
   font-size: 2rem;
 }
 
-// colors
-.inherit {
+// Colors
+._inherit {
   color: inherit;
 }
 
-.primary {
+._primary {
   color: var(--color-primary);
 }
 
-.secondary {
+._secondary {
   color: var(--color-secondary);
 }
 
-.accent {
+._accent {
   color: var(--color-accent);
 }
 
-.success {
+._success {
   color: var(--color-success);
 }
 
-.warning {
+._warning {
   color: var(--color-warning);
 }
 
-.error {
+._error {
   color: var(--color-error);
 }
 
-// variants
-.filled {
+// Variants
+._filled {
   border-color: currentColor;
   background-color: currentColor;
 
-  &:not(.secondary) > span,
-  &:not(.secondary) > .icon {
+  &:not(._secondary) > span,
+  &:not(._secondary) > .icon {
     color: var(--color-secondary);
   }
 
-  &:not(.secondary)::after {
+  &:not(._secondary)::after {
     opacity: 0.2;
     background-color: var(--color-secondary);
   }
 
-  &:not(.secondary):hover::after {
+  &:not(._secondary):hover::after {
     opacity: 0.1;
   }
 
-  &:not(.secondary):hover:active::after {
+  &:not(._secondary):hover:active::after {
     opacity: 0;
   }
 
-  &.secondary {
+  &._secondary {
     > span,
     > .icon {
       color: var(--color-primary);
@@ -147,7 +147,7 @@
   }
 }
 
-.outlined {
+._outlined {
   border-color: currentColor;
   background-color: transparent;
 }

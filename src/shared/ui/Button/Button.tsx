@@ -2,13 +2,13 @@ import { ButtonHTMLAttributes, FC } from 'react';
 
 import {
   ClassName,
-  Color,
+  View,
   Variant,
   Size,
   IconComponent,
 } from 'shared/ui/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
-import { UIColors, UISizes } from 'shared/ui/lib/constants';
+import { UIViewTypes, UISizes } from 'shared/ui/lib/constants';
 import { ButtonTestIds } from './lib/tests';
 import { ButtonVariants } from './lib/constants';
 
@@ -16,17 +16,17 @@ import cls from './Button.module.scss';
 
 interface ButtonProps extends
   ClassName,
-  Color,
+  View,
   Variant<ButtonVariants>,
   Size,
   IconComponent,
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
+  ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button: FC<ButtonProps> = (props) => {
   const {
     className,
     type,
-    color = UIColors.PRIMARY,
+    view = UIViewTypes.PRIMARY,
     variant = ButtonVariants.TEXT,
     size = UISizes.MD,
     Icon,
@@ -38,9 +38,9 @@ const Button: FC<ButtonProps> = (props) => {
     <button
       data-testid={ButtonTestIds.ROOT}
       className={cn(
-        cls.Button,
+        cls.root,
         undefined,
-        [className, cls[color], cls[variant], cls[size]],
+        [className, cls[view], cls[variant], cls[size]],
       )}
       type="button"
       {...buttonProps}

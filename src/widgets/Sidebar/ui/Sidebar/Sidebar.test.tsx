@@ -13,8 +13,8 @@ describe('Sidebar', () => {
   test('toggle', () => {
     renderComponent(<Sidebar />);
     const toggleButton = screen.getByTestId(SidebarTestIds.TOGGLE_BUTTON);
-    expect(screen.getByTestId(SidebarTestIds.ROOT)).toHaveClass('opened');
+    expect(screen.getByTestId(SidebarTestIds.ROOT)).toHaveClass('_opened');
     fireEvent.click(toggleButton);
-    expect(screen.getByTestId(SidebarTestIds.ROOT)).not.toHaveClass('opened');
+    expect(screen.getByTestId(SidebarTestIds.ROOT)).not.toHaveClass('_opened');
   });
 });
