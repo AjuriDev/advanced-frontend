@@ -15,7 +15,7 @@ const TextLoader: FC<LoaderProps> = (props) => {
   const { t } = useTranslation('common');
 
   return (
-    <div className={cn(cls.TextLoader, undefined, [className])}>
+    <div className={cn(cls.root, undefined, [className])}>
       <span className="_dots-loading">{text || t('loading')}</span>
     </div>
   );

@@ -8,7 +8,8 @@
     "airbnb",
     "airbnb-typescript",
     "plugin:i18next/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -20,12 +21,15 @@
   },
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "i18next"
   ],
   "rules": {
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "no-underscore-dangle": "off",
     "@typescript-eslint/naming-convention": "off",
     "react/function-component-definition": [

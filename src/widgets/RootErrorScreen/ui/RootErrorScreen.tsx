@@ -14,7 +14,7 @@ const RootErrorScreen: FC = () => {
   };
 
   return (
-    <div className={cls.RootErrorScreen}>
+    <div className={cls.root}>
       <h1 className={cls.header}>{t('rootError.title')}</h1>
       <Button onClick={handlePageReload}>{t('rootError.reloadPage')}</Button>
     </div>

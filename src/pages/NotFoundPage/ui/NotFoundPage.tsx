@@ -9,7 +9,7 @@ const NotFoundPage: FC = () => {
   const { t } = useTranslation('notFoundPage');
 
   return (
-    <div className={cn(cls.NotFoundPage, undefined, ['page'])}>
+    <div className={cn(cls.root, undefined, ['page'])}>
       <h1>{t('pageName')}</h1>
     </div>
   );

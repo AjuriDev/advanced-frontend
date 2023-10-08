@@ -1,20 +1,26 @@
-enum UIColors {
-  INHERIT = 'inherit',
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  ACCENT = 'accent',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  ERROR = 'error',
+enum UIViewTypes {
+  INHERIT = '_inherit',
+  PRIMARY = '_primary',
+  SECONDARY = '_secondary',
+  ACCENT = '_accent',
+  SUCCESS = '_success',
+  WARNING = '_warning',
+  ERROR = '_error',
 }
 
 enum UISizes {
-  XS = 'xs',
-  SM = 'sm',
-  MD = 'md',
-  LG = 'lg',
-  XL = 'xl',
-  XXL = 'xxl',
+  XS = '_xs',
+  SM = '_sm',
+  MD = '_md',
+  LG = '_lg',
+  XL = '_xl',
+  XXL = '_xxl',
 }
 
-export { UIColors, UISizes };
+enum AnimationDurations {
+  SHORT = 150,
+  NORMAL = 250,
+  LONG = 500,
+}
+
+export { UIViewTypes, UISizes, AnimationDurations };

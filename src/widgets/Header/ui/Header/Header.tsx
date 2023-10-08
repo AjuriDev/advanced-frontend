@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { AppRoutes, RoutePath } from 'shared/lib/constants';
-import { UIColors } from 'shared/ui/lib/constants';
+import { UIViewTypes } from 'shared/ui/lib/constants';
 
 import { AppLink } from 'shared/ui';
 import HomeIcon from 'shared/assets/icons/home.svg';
@@ -13,10 +13,10 @@ const Header: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <header className={cls.Header}>
+    <header className={cls.root}>
       <AppLink
         to={RoutePath[AppRoutes.MAIN]}
-        color={UIColors.SECONDARY}
+        view={UIViewTypes.SECONDARY}
         Icon={HomeIcon}
       >
         {t('pageNames.main')}

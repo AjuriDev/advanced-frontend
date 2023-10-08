@@ -34,7 +34,7 @@ const Navbar: FC<NavbarProps> = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(cls.Navbar, { [cls.onlyIcon]: onlyIcon }, [className])}>
+    <div className={cn(cls.root, { [cls.onlyIcon]: onlyIcon }, [className])}>
       {Object.values(routeConfig).map(({ route, path, Icon }) => (
         <AppLink
           key={route}

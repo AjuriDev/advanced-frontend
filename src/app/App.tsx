@@ -7,7 +7,7 @@ import { Sidebar } from 'widgets/Sidebar';
 import './styles/_index.scss';
 
 const App: FC = () => (
-  <div className="'app'">
+  <div className="app">
     <Header />
     <div className="app__content">
       <Sidebar />
@@ -15,5 +15,4 @@ const App: FC = () => (
     </div>
   </div>
 );
-
 export default App;
