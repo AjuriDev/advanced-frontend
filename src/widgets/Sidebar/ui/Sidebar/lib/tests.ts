@@ -1,6 +1,6 @@
-enum Tests {
+enum SidebarTestIds {
   ROOT = 'sidebar',
   TOGGLE_BUTTON = 'toggleButton',
 }
 
-export { Tests as SidebarTestIds };
+export { SidebarTestIds };

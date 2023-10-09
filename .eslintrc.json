@@ -71,6 +71,14 @@
     },
     {
       "files": [
+        "**/src/**/*.slice.ts"
+      ],
+      "rules": {
+        "no-param-reassign": "off"
+      }
+    },
+    {
+      "files": [
         "**/config/**/*.{ts,tsx}",
         "__mocks__/**/*.{ts,tsx}"
       ],
