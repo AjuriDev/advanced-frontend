@@ -1,7 +1,9 @@
 {
   "actions": {
     "toggle": "Toggle",
-    "open": "Open"
+    "open": "Open",
+    "increase": "Increase",
+    "decrease": "Decrease"
   },
   "loading": "Loading"
 }

@@ -1,4 +1,7 @@
 const jestConfig = {
+  globals: {
+    __IS_DEV__: true,
+  },
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
