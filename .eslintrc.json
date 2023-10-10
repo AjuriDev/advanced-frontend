@@ -52,11 +52,11 @@
     "max-len": [
       "error",
       {
+        "code": 100,
         "ignoreComments": true
       }
     ]
   },
-  "ignorePatterns": ["scripts/**/*"],
   "globals": {
     "__IS_DEV__": true
   },
