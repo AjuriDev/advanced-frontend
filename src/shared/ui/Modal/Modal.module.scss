@@ -4,9 +4,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: -1;
   transition-duration: var(--transition-daration--normal);
 }
 
@@ -24,11 +21,23 @@
   padding: var(--padding--lg);
   border-radius: var(--border-radius--md);
   background-color: var(--color-bg);
-  transform: scale(0.5);
   transition-duration: var(--transition-daration--normal);
+  will-change: transform;
 }
 
-._opened:not(._closing) {
+._closed,
+._closing {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  .content {
+    transform: scale(0.5);
+  }
+}
+
+._opening,
+._opened {
   opacity: 1;
   pointer-events: auto;
   z-index: var(--z-index-modal);

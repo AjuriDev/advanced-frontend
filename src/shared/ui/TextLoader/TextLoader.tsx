@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ClassName } from 'shared/ui/types';
-import { joinClassNames as cn } from 'shared/lib/utils';
+import { ClassName } from '../../types';
+import { joinClassNames as cn } from '../../lib/utils';
 
 import cls from './TextLoader.module.scss';
 
@@ -12,7 +12,7 @@ interface LoaderProps extends ClassName {
 
 const TextLoader: FC<LoaderProps> = (props) => {
   const { className, text } = props;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className={cn(cls.root, undefined, [className])}>

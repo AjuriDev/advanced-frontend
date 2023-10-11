@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import { ClassName, View, IconComponent } from 'shared/ui/types';
-import { joinClassNames as cn } from 'shared/lib/utils';
-import { UIViewTypes } from 'shared/ui/lib/constants';
+import { ClassName, View, IconComponent } from '../../types';
+import { joinClassNames as cn } from '../../lib/utils';
+import { UIViewTypes } from '../../lib/constants/ui';
 
 import cls from './AppLink.module.scss';
 
