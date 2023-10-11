@@ -3,9 +3,11 @@ import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 
+import { StoreProvider } from 'app/providers/store';
+
 import i18nForTests from 'shared/config/i18n/i18nForTests';
 import { RoutePath, AppRoutes } from 'shared/lib/constants';
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { StateSchema } from 'shared/types';
 import { DeepPartial } from '@reduxjs/toolkit';
 
 interface RenderComponentOptions {

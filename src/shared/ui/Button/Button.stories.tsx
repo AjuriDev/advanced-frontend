@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UIViewTypes, UISizes } from 'shared/ui/lib/constants';
+import { UIViewTypes, UISizes } from 'shared/lib/constants/ui';
 import { ButtonVariants } from './lib/constants';
 
 import Button from './Button';

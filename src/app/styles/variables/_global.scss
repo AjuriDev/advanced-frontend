@@ -1,6 +1,12 @@
 :root {
   // Font
   --font-family-main: consolas, "Times New Roman", serif;
+  --font-size--xs: 1.2rem;
+  --font-line--xs: 1.5;
+  --font--xs: var(--font-size--xs) / var(--font-line--xs) var(--font-family-main);
+  --font-size--sm: 1.4rem;
+  --font-line--sm: 1.5;
+  --font--sm: var(--font-size--sm) / var(--font-line--sm) var(--font-family-main);
   --font-size--md: 1.6rem;
   --font-line--md: 1.5;
   --font--md: var(--font-size--md) / var(--font-line--md) var(--font-family-main);
@@ -39,4 +45,5 @@
   --transition-daration--normal: 250ms;
   --transition-daration--short: 150ms;
   --transition-daration--long: 500ms;
+  --transition-daration--infinity: 10000ms;
 }

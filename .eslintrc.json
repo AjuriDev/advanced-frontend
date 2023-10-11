@@ -39,6 +39,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "jsx-a11y/label-has-associated-control": ["error", {}], // Без пустого объекта выдает ошибку в корректном коде
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "warn",
     "no-restricted-exports": "off",
@@ -46,7 +47,8 @@
     "i18next/no-literal-string": [
       "error",
       {
-        "markupOnly": true
+        "markupOnly": true,
+        "ignoreAttribute": ["autoComplete"]
       }
     ],
     "max-len": [

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { AppRouter } from 'app/providers/Router';
+import { AppRouter } from 'app/providers/router';
 import { Header } from 'widgets/Header';
 import { Sidebar } from 'widgets/Sidebar';
 

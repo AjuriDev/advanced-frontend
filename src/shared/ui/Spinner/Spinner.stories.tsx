@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UISizes } from 'shared/ui/lib/constants';
+import { UISizes } from 'shared/lib/constants/ui';
 import Spinner from './Spinner';
 
 const meta: Meta<typeof Spinner> = {

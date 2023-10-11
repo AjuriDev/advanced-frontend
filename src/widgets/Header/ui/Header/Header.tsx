@@ -2,9 +2,11 @@ import { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { AppRoutes, RoutePath } from 'shared/lib/constants';
-import { UIViewTypes } from 'shared/ui/lib/constants';
-
+import { UIViewTypes } from 'shared/lib/constants/ui';
 import { AppLink } from 'shared/ui';
+
+import { LoginButton } from 'features/authByUsername';
+
 import HomeIcon from 'shared/assets/icons/home.svg';
 
 import cls from './Header.module.scss';
@@ -21,6 +23,7 @@ const Header: FC = () => {
       >
         {t('pageNames.main')}
       </AppLink>
+      <LoginButton className={cls.login} />
     </header>
   );
 };

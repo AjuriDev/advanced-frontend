@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import { ClassName } from 'shared/ui/types';
+import { ClassName } from 'shared/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
 
-import { UISizes } from 'shared/ui/lib/constants';
+import { UISizes } from 'shared/lib/constants/ui';
 import { Spinner } from 'shared/ui';
 
 import cls from './AppLoader.module.scss';
