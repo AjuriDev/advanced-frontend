@@ -7,7 +7,7 @@ const meta: Meta<typeof AppLink> = {
   tags: ['autodocs'],
   args: {
     to: '/',
-    children: 'AppLink',
+    text: 'AppLink',
   },
 };
 

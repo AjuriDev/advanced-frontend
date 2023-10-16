@@ -2,7 +2,7 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
 
-const PORT = 8000;
+const PORT = 8080;
 
 const Delays = {
   NONE: 0,

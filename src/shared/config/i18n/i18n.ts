@@ -11,10 +11,15 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: __IS_DEV__,
-    defaultNS: 'common',
 
     interpolation: {
       escapeValue: false,
+    },
+
+    // Данные опции нужны для корректной интернационализации
+    load: 'languageOnly',
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
   });
 

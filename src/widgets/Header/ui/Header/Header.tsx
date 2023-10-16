@@ -1,18 +1,20 @@
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 
-import { useTranslation } from 'react-i18next';
+import { getUserAuthData } from 'entities/user';
+
 import { AppRoutes, RoutePath } from 'shared/lib/constants';
 import { UIViewTypes } from 'shared/lib/constants/ui';
 import { AppLink } from 'shared/ui';
 
-import { LoginButton } from 'features/authByUsername';
-
 import HomeIcon from 'shared/assets/icons/home.svg';
+import LogoutButton from 'widgets/Header/ui/LogoutButton/LogoutButton';
+import LoginButton from '../LoginButton/LoginButton';
 
 import cls from './Header.module.scss';
 
 const Header: FC = () => {
-  const { t } = useTranslation();
+  const authData = useSelector(getUserAuthData);
 
   return (
     <header className={cls.root}>
@@ -20,10 +22,11 @@ const Header: FC = () => {
         to={RoutePath[AppRoutes.MAIN]}
         view={UIViewTypes.SECONDARY}
         Icon={HomeIcon}
-      >
-        {t('pageNames.main')}
-      </AppLink>
-      <LoginButton className={cls.login} />
+        text={{ tKey: 'pageNames.main' }}
+      />
+      {authData
+        ? <LogoutButton className={cls.authControl} />
+        : <LoginButton className={cls.authControl} />}
     </header>
   );
 };

@@ -8,7 +8,7 @@ interface LangSwitcherProps extends ClassName {}
 
 const LangSwitcher: FC<LangSwitcherProps> = (props) => {
   const { className } = props;
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const handleLangToggle = async () => {
     await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -17,10 +17,9 @@ const LangSwitcher: FC<LangSwitcherProps> = (props) => {
   return (
     <Button
       className={className}
+      text={{ tKey: 'langShort' }}
       onClick={handleLangToggle}
-    >
-      {t('langShort')}
-    </Button>
+    />
   );
 };
 

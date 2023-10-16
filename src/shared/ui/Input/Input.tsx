@@ -6,19 +6,26 @@ import {
   ChangeEvent,
 } from 'react';
 
-import { ClassName, FieldProps } from '../../types';
+import { UIViewTypes } from 'shared/lib/constants/ui';
+import {
+  ClassName,
+  View,
+  FieldProps,
+} from '../../types';
 import { joinClassNames as cn } from '../../lib/utils';
 
 import cls from './Input.module.scss';
 
 interface InputProps extends
   ClassName,
+  View,
   Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>,
   FieldProps {}
 
 const Input: FC<InputProps> = (props) => {
   const {
     className,
+    view = UIViewTypes.PRIMARY,
     label,
     hint,
     autofocus,
@@ -33,7 +40,7 @@ const Input: FC<InputProps> = (props) => {
   };
 
   useEffect(() => {
-    if (autofocus) ref.current.focus();
+    if (autofocus) ref.current?.focus();
   }, [autofocus]);
 
   return (
@@ -41,7 +48,7 @@ const Input: FC<InputProps> = (props) => {
       className={cn(
         cls.root,
         undefined,
-        [className],
+        [cls[view], className],
       )}
     >
       {label && <span className={cls.label}>{label}</span>}

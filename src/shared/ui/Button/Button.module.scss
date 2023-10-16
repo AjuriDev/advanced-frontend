@@ -1,4 +1,8 @@
+@import "shared/styles/mixins/reset";
+
 .root {
+  @include reset-btn;
+
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -6,14 +10,18 @@
   padding: 0.5em 1em;
   border: 1px solid transparent;
   border-radius: var(--border-radius--md);
-  background-color: transparent;
   font-weight: 700;
-  text-align: left;
   cursor: pointer;
   transition:
+    opacity var(--transition-daration--normal),
     color var(--transition-daration--normal),
     border-color var(--transition-daration--normal),
     background-color var(--transition-daration--normal);
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
 
   > span {
     font-size: 1.6em;
@@ -83,33 +91,11 @@
   font-size: 2rem;
 }
 
-// Colors
-._inherit {
-  color: inherit;
-}
-
-._primary {
-  color: var(--color-primary);
-}
-
-._secondary {
-  color: var(--color-secondary);
-}
-
-._accent {
-  color: var(--color-accent);
-}
-
-._success {
-  color: var(--color-success);
-}
-
-._warning {
-  color: var(--color-warning);
-}
-
-._error {
-  color: var(--color-error);
+// ViewTypes
+@each $view in "inherit" "primary" "secondary" "accent" "success" "warning" "error" {
+  ._#{$view} {
+    color: var(--color-#{$view});
+  }
 }
 
 // Variants

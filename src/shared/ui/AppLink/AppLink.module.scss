@@ -1,9 +1,11 @@
+@import "shared/styles/mixins/reset";
+
 .root {
+  @include reset-link;
+
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: inherit;
-  text-decoration: none;
 }
 
 .icon {

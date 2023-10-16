@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap--lg);
+  width: 24rem;
+}
+
+.login-button {
+  align-self: flex-end;
+}

@@ -1,0 +1,21 @@
+{
+  "lang": "English",
+  "langShort": "En",
+  "pageNames": {
+    "main": "Main",
+    "about": "About"
+  },
+  "rootError": {
+    "title": "Something went wrong",
+    "reloadPage": "Reload page"
+  },
+  "actions": {
+    "login": "Login",
+    "logout": "Logout",
+    "toggle": "Toggle",
+    "open": "Open",
+    "increase": "Increase",
+    "decrease": "Decrease"
+  },
+  "loading": "Loading"
+}

@@ -20,3 +20,10 @@
   align-self: flex-end;
   font-size: var(--font-size--xs);
 }
+
+// ViewTypes
+@each $view in "inherit" "primary" "secondary" "accent" "success" "warning" "error" {
+  ._#{$view} {
+    color: var(--color-#{$view});
+  }
+}

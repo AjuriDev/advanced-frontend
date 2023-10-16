@@ -3,8 +3,10 @@ import {
   StyleDecorator,
   RouterDecorator,
   ThemeDecorator,
+  TranslationDecorator,
 } from '../../src/shared/config/storybook';
 import { Themes, themeClassNames } from '../../src/shared/lib/constants';
+import '../../src/shared/config/i18n/i18n';
 
 const preview: Preview = {
   parameters: {
@@ -32,7 +34,12 @@ const preview: Preview = {
       ],
     },
   },
-  decorators: [StyleDecorator, RouterDecorator, ThemeDecorator],
+  decorators: [
+    StyleDecorator,
+    RouterDecorator,
+    ThemeDecorator,
+    TranslationDecorator,
+  ],
 };
 
 export default preview;

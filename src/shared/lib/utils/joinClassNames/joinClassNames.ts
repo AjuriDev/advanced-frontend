@@ -1,17 +1,16 @@
 import { Dividers } from '../../constants';
-
-type Mods = Record<string, boolean | string>;
+import { Mods } from './types';
 
 export default function joinClassNames(
   cls: string,
   mods: Mods = {},
-  additional: string[] = [],
+  additional: (string | undefined)[] = [],
 ): string {
   return [
     cls,
     ...Object.entries(mods)
       .reduce(
-        (additionalClasses, [className, value]) => (value
+        (additionalClasses: string[], [className, value]) => (value
           ? [...additionalClasses, className]
           : additionalClasses),
         [],

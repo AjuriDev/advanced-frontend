@@ -2,8 +2,8 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn build:prod
-yarn lint:ts:fix
-yarn lint:css:fix
+yarn lint:ts
+yarn lint:css
 yarn test:unit
 yarn storybook:build
 yarn test:ui:ci
