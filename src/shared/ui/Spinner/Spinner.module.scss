@@ -3,7 +3,7 @@
   100% { transform: rotate(360deg); }
 }
 
-.SpinnerWrapper {
+.root {
   width: 8em;
   height: 8em;
   display: inline-block;
@@ -11,27 +11,27 @@
   font-size: 1rem;
 }
 
-.xs {
+._xs {
   font-size: 0.3rem;
 }
 
-.sm {
+._sm {
   font-size: 0.45rem;
 }
 
-.md {
+._md {
   font-size: 0.7rem;
 }
 
-.lg {
+._lg {
   font-size: 1rem;
 }
 
-.xl {
+._xl {
   font-size: 1.5rem;
 }
 
-.xxl {
+._xxl {
   font-size: 2rem;
 }
 

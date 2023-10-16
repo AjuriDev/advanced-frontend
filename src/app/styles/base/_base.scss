@@ -48,6 +48,25 @@ img {
   max-height: 100%;
 }
 
+h1 {
+  font-size: var(--font-size--xxl);
+}
+
+h2 {
+  font-size: var(--font-size--xl);
+}
+
+h3 {
+  font-size: var(--font-size--lg);
+}
+
+h4,
+h5,
+h6,
+p {
+  font-size: var(--font-size--md);
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

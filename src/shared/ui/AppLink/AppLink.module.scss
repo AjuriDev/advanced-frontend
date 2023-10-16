@@ -1,9 +1,11 @@
-.AppLink {
+@import "shared/styles/mixins/reset";
+
+.root {
+  @include reset-link;
+
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: inherit;
-  text-decoration: none;
 }
 
 .icon {
@@ -12,14 +14,14 @@
   height: 2rem;
 }
 
-.inherit {
+._inherit {
   color: inherit;
 }
 
-.primary {
+._primary {
   color: var(--color-primary);
 }
 
-.secondary {
+._secondary {
   color: var(--color-secondary);
 }

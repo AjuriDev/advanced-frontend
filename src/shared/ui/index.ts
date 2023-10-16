@@ -1,5 +1,10 @@
-export { default as AppLink } from './AppLink';
-export { default as Button } from './Button';
-export { default as TextLoader } from './TextLoader';
-export { default as Spinner } from './Spinner';
-export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as AppLink } from './AppLink/AppLink';
+export { default as Button } from './Button/Button';
+export { default as TextLoader } from './TextLoader/TextLoader';
+export { default as Spinner } from './Spinner/Spinner';
+export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
+export { default as Modal } from './Modal/Modal';
+export { default as Portal } from './Portal/Portal';
+export { default as Form, FormProps } from './Form/Form';
+export { default as Input } from './Input/Input';
+export { default as Text } from './Text/Text';

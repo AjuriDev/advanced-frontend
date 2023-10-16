@@ -8,7 +8,8 @@
     "airbnb",
     "airbnb-typescript",
     "plugin:i18next/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -20,12 +21,15 @@
   },
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "i18next"
   ],
   "rules": {
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "no-underscore-dangle": "off",
     "@typescript-eslint/naming-convention": "off",
     "react/function-component-definition": [
@@ -35,6 +39,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "jsx-a11y/label-has-associated-control": ["error", {}], // Без пустого объекта выдает ошибку в корректном коде
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "warn",
     "no-restricted-exports": "off",
@@ -42,17 +47,18 @@
     "i18next/no-literal-string": [
       "error",
       {
-        "markupOnly": true
+        "markupOnly": true,
+        "ignoreAttribute": ["autoComplete", "Tag", "fallback"]
       }
     ],
     "max-len": [
       "error",
       {
+        "code": 100,
         "ignoreComments": true
       }
     ]
   },
-  "ignorePatterns": ["scripts/**/*"],
   "globals": {
     "__IS_DEV__": true
   },
@@ -63,6 +69,14 @@
       ],
       "rules": {
         "i18next/no-literal-string": "off"
+      }
+    },
+    {
+      "files": [
+        "**/src/**/*.slice.ts"
+      ],
+      "rules": {
+        "no-param-reassign": "off"
       }
     },
     {

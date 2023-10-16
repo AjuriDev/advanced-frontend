@@ -1,30 +1,40 @@
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import { ClassName, Color, IconComponent } from 'shared/ui/types';
-import { joinClassNames as cn } from 'shared/lib/utils';
-import { UIColors } from 'shared/ui/lib/constants';
+import {
+  ClassName, View, IconComponent, TextType,
+} from '../../types';
+import { joinClassNames as cn } from '../../lib/utils';
+import { UIViewTypes } from '../../lib/constants/ui';
+
+import Text from '../Text/Text';
 
 import cls from './AppLink.module.scss';
 
 interface AppLinkProps extends
   ClassName,
-  Omit<LinkProps, 'color'>,
-  Color,
-  IconComponent {}
+  LinkProps,
+  View,
+  IconComponent {
+  text?: TextType;
+}
 
 const AppLink: FC<AppLinkProps> = (props) => {
   const {
-    className, color = UIColors.PRIMARY, Icon, children, ...linkProps
+    className,
+    view = UIViewTypes.PRIMARY,
+    text,
+    Icon,
+    ...linkProps
   } = props;
 
   return (
     <Link
-      className={cn(cls.AppLink, undefined, [className, cls[color]])}
+      className={cn(cls.root, undefined, [className, cls[view]])}
       {...linkProps}
     >
       {Icon && <Icon className={cls.icon} />}
-      {children}
+      {text && <Text text={text} />}
     </Link>
   );
 };

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UIColors, UISizes } from 'shared/ui/lib/constants';
+import { UIViewTypes, UISizes } from 'shared/lib/constants/ui';
 import { ButtonVariants } from './lib/constants';
 
 import Button from './Button';
@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodocs'],
   args: {
-    children: 'Button',
+    text: 'Button',
   },
 };
 
@@ -79,42 +79,42 @@ const FilledXXL: Story = {
 const FilledPrimary: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.PRIMARY,
+    view: UIViewTypes.PRIMARY,
   },
 };
 
 const FilledSecondary: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.SECONDARY,
+    view: UIViewTypes.SECONDARY,
   },
 };
 
 const FilledAccent: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.ACCENT,
+    view: UIViewTypes.ACCENT,
   },
 };
 
 const FilledSuccess: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.SUCCESS,
+    view: UIViewTypes.SUCCESS,
   },
 };
 
-const FilledWarinng: Story = {
+const FilledWarning: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.WARNING,
+    view: UIViewTypes.WARNING,
   },
 };
 
 const FilledError: Story = {
   args: {
     variant: ButtonVariants.FILLED,
-    color: UIColors.ERROR,
+    view: UIViewTypes.ERROR,
   },
 };
 
@@ -132,7 +132,7 @@ export {
   FilledSecondary,
   FilledAccent,
   FilledSuccess,
-  FilledWarinng,
+  FilledWarning,
   FilledError,
 };
 

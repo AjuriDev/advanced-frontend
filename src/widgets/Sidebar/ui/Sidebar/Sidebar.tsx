@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
 
-import { ClassName } from 'shared/ui/types';
+import { ClassName } from 'shared/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
-import { UISizes } from 'shared/ui/lib/constants';
+import { UISizes } from 'shared/lib/constants/ui';
 
 import { Button } from 'shared/ui';
-import { Navbar } from 'features/Navbar';
-import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { LangSwitcher } from 'features/LangSwitcher';
+import { Navbar } from 'features/navigateApp';
+import { ThemeSwitcher } from 'features/switchTheme';
+import { LangSwitcher } from 'features/switchLang';
 
 import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import { SidebarTestIds } from './lib/tests';
@@ -27,7 +27,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <div
       data-testid={SidebarTestIds.ROOT}
-      className={cn(cls.Sidebar, { [cls.opened]: opened }, [className])}
+      className={cn(cls.root, { [cls._opened]: opened }, [className])}
     >
       <Button
         data-testid={SidebarTestIds.TOGGLE_BUTTON}

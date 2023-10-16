@@ -1,5 +1,5 @@
-enum Tests {
+enum ButtonTestIds {
   ROOT = 'button',
 }
 
-export { Tests as ButtonTestIds };
+export { ButtonTestIds };

@@ -15,6 +15,12 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+
+    // Данные опции нужны для корректной интернационализации
+    load: 'languageOnly',
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
   });
 
 export default i18n;

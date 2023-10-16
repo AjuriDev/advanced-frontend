@@ -1,4 +1,8 @@
-.Button {
+@import "shared/styles/mixins/reset";
+
+.root {
+  @include reset-btn;
+
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -6,14 +10,18 @@
   padding: 0.5em 1em;
   border: 1px solid transparent;
   border-radius: var(--border-radius--md);
-  background-color: transparent;
   font-weight: 700;
-  text-align: left;
   cursor: pointer;
   transition:
+    opacity var(--transition-daration--normal),
     color var(--transition-daration--normal),
     border-color var(--transition-daration--normal),
     background-color var(--transition-daration--normal);
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
 
   > span {
     font-size: 1.6em;
@@ -58,84 +66,62 @@
   }
 }
 
-// sizes
-.xs {
+// Sizes
+._xs {
   font-size: 0.6rem;
 }
 
-.sm {
+._sm {
   font-size: 0.8rem;
 }
 
-.md {
+._md {
   font-size: 1rem;
 }
 
-.lg {
+._lg {
   font-size: 1.2rem;
 }
 
-.xl {
+._xl {
   font-size: 1.5rem;
 }
 
-.xxl {
+._xxl {
   font-size: 2rem;
 }
 
-// colors
-.inherit {
-  color: inherit;
+// ViewTypes
+@each $view in "inherit" "primary" "secondary" "accent" "success" "warning" "error" {
+  ._#{$view} {
+    color: var(--color-#{$view});
+  }
 }
 
-.primary {
-  color: var(--color-primary);
-}
-
-.secondary {
-  color: var(--color-secondary);
-}
-
-.accent {
-  color: var(--color-accent);
-}
-
-.success {
-  color: var(--color-success);
-}
-
-.warning {
-  color: var(--color-warning);
-}
-
-.error {
-  color: var(--color-error);
-}
-
-// variants
-.filled {
+// Variants
+._filled {
   border-color: currentColor;
   background-color: currentColor;
 
-  &:not(.secondary) > span,
-  &:not(.secondary) > .icon {
+  &:not(._secondary) > span,
+  &:not(._secondary) > .icon {
     color: var(--color-secondary);
   }
 
-  &:not(.secondary)::after {
+  &:not(._secondary)::after {
     opacity: 0.2;
     background-color: var(--color-secondary);
   }
 
-  &:not(.secondary):hover::after {
+  &:not(._secondary):hover::after {
     opacity: 0.1;
   }
 
-  &:not(.secondary):hover:active::after {
+  &:not(._secondary):hover:active::after {
     opacity: 0;
   }
 
-  &.secondary {
+  &._secondary {
     > span,
     > .icon {
       color: var(--color-primary);
@@ -147,7 +133,7 @@
   }
 }
 
-.outlined {
+._outlined {
   border-color: currentColor;
   background-color: transparent;
 }

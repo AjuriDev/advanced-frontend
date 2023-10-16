@@ -1,8 +1,6 @@
-// import joinClassNames from './joinClassNames';
+import joinClassNames from './joinClassNames';
 
-import { joinClassNames } from 'shared/lib/utils';
-
-describe('classNames', () => {
+describe('joinClassNames', () => {
   test('with only first param', () => {
     expect(joinClassNames('someClass')).toBe('someClass');
   });

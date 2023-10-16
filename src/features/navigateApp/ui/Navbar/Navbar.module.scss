@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.link span {
+  transition:
+    transform var(--transition-daration--short),
+    opacity var(--transition-daration--short),
+    width var(--transition-daration--short);
+}
+
+.only-icon {
+  .link span {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transform: scaleX(0);
+  }
+}

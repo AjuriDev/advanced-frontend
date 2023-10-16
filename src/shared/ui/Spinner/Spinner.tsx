@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { ClassName, Size } from 'shared/ui/types';
-import { joinClassNames as cn } from 'shared/lib/utils';
-import { UISizes } from 'shared/ui/lib/constants';
+import { ClassName, Size } from '../../types';
+import { joinClassNames as cn } from '../../lib/utils';
+import { UISizes } from '../../lib/constants/ui';
 
 import cls from './Spinner.module.scss';
 
@@ -13,7 +13,7 @@ const Spinner: FC<SpinnerProps> = (props) => {
 
   return (
     <div className={cn(
-      cls.SpinnerWrapper,
+      cls.root,
       undefined,
       [cls[size], className],
     )}

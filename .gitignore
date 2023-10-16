@@ -1,9 +1,9 @@
 # dependencies
-/node_modules
+node_modules
 
 # production
-/build
-/storybook-static
+build
+storybook-static
 
 # development
 .loki/report.html

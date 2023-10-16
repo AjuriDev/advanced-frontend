@@ -1,22 +1,61 @@
 :root {
+  // Font
   --font-family-main: consolas, "Times New Roman", serif;
+  --font-size--xs: 1.2rem;
+  --font-line--xs: 1.5;
+  --font--xs: var(--font-size--xs) / var(--font-line--xs) var(--font-family-main);
+  --font-size--sm: 1.4rem;
+  --font-line--sm: 1.5;
+  --font--sm: var(--font-size--sm) / var(--font-line--sm) var(--font-family-main);
   --font-size--md: 1.6rem;
   --font-line--md: 1.5;
   --font--md: var(--font-size--md) / var(--font-line--md) var(--font-family-main);
   --font-size--lg: 2.4rem;
   --font-line--lg: 1.35;
   --font--lg: var(--font-size--lg) / var(--font-line--lg) var(--font-family-main);
+  --font-size--xl: 3.2rem;
+  --font-line--xl: 1.25;
+  --font--xl: var(--font-size--xl) / var(--font-line--xl) var(--font-family-main);
+  --font-size--xxl: 4rem;
+  --font-line--xxl: 1.2;
+  --font--xxl: var(--font-size--xxl) / var(--font-line--xxl) var(--font-family-main);
+
+  // Color
+  --color-overlay: rgb(0 0 0 / 60%);
+
+  // Z-index
+  --z-index-head: 50;
+  --z-index-menu: 100;
+  --z-index-modal: 150;
+  --z-index-tooltip: 200;
+  --z-index-error: 250;
+  --z-index-loader: 300;
+
+  // Size
+  --content-width: 144rem;
   --header-height: 5.6rem;
   --sidebar-width--opened: 30rem;
   --sidebar-width--closed: 7.5rem;
+
+  // Indent & offset
   --main-layout-gap: 2rem;
+  --gap--xs: 0.4rem;
+  --gap--sm: 0.8rem;
+  --gap--md: 1.2rem;
+  --gap--lg: 1.6rem;
+  --gap--xl: 2.4rem;
+  --gap--xxl: 3.2rem;
   --padding--md: 1.6rem;
   --padding--lg: 2.4rem;
+
+  // Border
   --border-radius--sm: 0.2em;
   --border-radius--md: 0.4em;
   --border-radius--lg: 0.6em;
-  --content-width: 144rem;
+
+  // Animation
   --transition-daration--normal: 250ms;
   --transition-daration--short: 150ms;
   --transition-daration--long: 500ms;
+  --transition-daration--infinity: 10000ms;
 }

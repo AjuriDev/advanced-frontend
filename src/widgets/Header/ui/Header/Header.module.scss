@@ -1,8 +1,15 @@
-.Header {
+.root {
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
+  gap: var(--gap--lg);
+  padding: var(--padding--md);
   height: var(--header-height);
   background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.auth-control {
+  margin-left: auto;
 }

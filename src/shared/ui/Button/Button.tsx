@@ -1,36 +1,45 @@
+/* eslint-disable react/button-has-type */
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import {
   ClassName,
-  Color,
+  View,
   Variant,
   Size,
+  Loading,
   IconComponent,
-} from 'shared/ui/types';
-import { joinClassNames as cn } from 'shared/lib/utils';
-import { UIColors, UISizes } from 'shared/ui/lib/constants';
+  TextType,
+} from '../../types';
+import { joinClassNames as cn } from '../../lib/utils';
+import { UIViewTypes, UISizes } from '../../lib/constants/ui';
 import { ButtonTestIds } from './lib/tests';
 import { ButtonVariants } from './lib/constants';
+
+import Text from '../Text/Text';
 
 import cls from './Button.module.scss';
 
 interface ButtonProps extends
   ClassName,
-  Color,
+  View,
   Variant<ButtonVariants>,
   Size,
   IconComponent,
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
+  Loading,
+  ButtonHTMLAttributes<HTMLButtonElement> {
+  text?: TextType;
+}
 
 const Button: FC<ButtonProps> = (props) => {
   const {
     className,
-    type,
-    color = UIColors.PRIMARY,
+    type = 'button',
+    view = UIViewTypes.PRIMARY,
     variant = ButtonVariants.TEXT,
     size = UISizes.MD,
     Icon,
-    children,
+    text,
+    loading,
     ...buttonProps
   } = props;
 
@@ -38,14 +47,14 @@ const Button: FC<ButtonProps> = (props) => {
     <button
       data-testid={ButtonTestIds.ROOT}
       className={cn(
-        cls.Button,
+        cls.root,
         undefined,
-        [className, cls[color], cls[variant], cls[size]],
+        [className, cls[view], cls[variant], cls[size]],
       )}
-      type="button"
+      type={type}
       {...buttonProps}
     >
-      {children && <span>{children}</span>}
+      {text && <Text text={text} loading={loading} />}
       {Icon && <Icon className={cls.icon} />}
     </button>
   );

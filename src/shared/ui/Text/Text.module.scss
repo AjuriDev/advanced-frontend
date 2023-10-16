@@ -1,0 +1,23 @@
+@import "shared/styles/mixins/dots-loading";
+
+.root {
+  color: inherit;
+}
+
+._loading {
+  @include dots-loading;
+}
+
+// Sizes
+@each $size in "xs" "sm" "md" "lg" "xl" "xxl" {
+  ._#{$size} {
+    font-size: var(--font-size--#{$size});
+  }
+}
+
+// ViewTypes
+@each $view in "inherit" "primary" "secondary" "accent" "success" "warning" "error" {
+  ._#{$view} {
+    color: var(--color-#{$view});
+  }
+}

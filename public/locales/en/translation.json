@@ -9,5 +9,13 @@
     "title": "Something went wrong",
     "reloadPage": "Reload page"
   },
-  "crush": "Crush"
+  "actions": {
+    "login": "Login",
+    "logout": "Logout",
+    "toggle": "Toggle",
+    "open": "Open",
+    "increase": "Increase",
+    "decrease": "Decrease"
+  },
+  "loading": "Loading"
 }

@@ -1,0 +1,9 @@
+{
+  "messages": {
+    "auth": {
+      "error": {
+        "wrongLoginOrPassword": "Wrong login or password"
+      }
+    }
+  }
+}
