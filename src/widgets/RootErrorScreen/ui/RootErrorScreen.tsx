@@ -1,13 +1,10 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
-import { Button } from 'shared/ui';
+import { Button, Text } from 'shared/ui';
 
 import cls from './RootErrorScreen.module.scss';
 
 const RootErrorScreen: FC = () => {
-  const { t } = useTranslation();
-
   const handlePageReload = () => {
     // eslint-disable-next-line no-restricted-globals
     location.reload();
@@ -15,8 +12,8 @@ const RootErrorScreen: FC = () => {
 
   return (
     <div className={cls.root}>
-      <h1 className={cls.header}>{t('rootError.title')}</h1>
-      <Button onClick={handlePageReload}>{t('rootError.reloadPage')}</Button>
+      <Text className={cls.header} text={{ tKey: 'rootError.title' }} Tag="h1" />
+      <Button text={{ tKey: 'rootError.reloadPage' }} onClick={handlePageReload} />
     </div>
   );
 };

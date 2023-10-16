@@ -7,6 +7,7 @@ describe('getUser', () => {
     const state: DeepPartial<StateSchema> = {
       user: { authData: { id: '0', username: 'admin' } },
     };
-    expect(getUser(state as StateSchema)).toEqual({ authData: { id: '0', username: 'admin' } });
+    expect(getUser(state as StateSchema))
+      .toEqual({ authData: { id: '0', username: 'admin' } });
   });
 });

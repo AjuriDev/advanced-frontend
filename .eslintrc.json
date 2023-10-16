@@ -48,7 +48,7 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["autoComplete"]
+        "ignoreAttribute": ["autoComplete", "Tag", "fallback"]
       }
     ],
     "max-len": [

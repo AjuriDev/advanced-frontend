@@ -4,7 +4,7 @@ import { Themes, LocalStorageKeys } from '../constants';
 import { ThemeContext } from '../contexts';
 
 interface UseThemeResult {
-  theme: Themes;
+  theme?: Themes;
   toggleTheme: () => void;
 }
 
@@ -13,7 +13,7 @@ function useTheme(): UseThemeResult {
 
   const toggleTheme = () => {
     const newTheme = theme === Themes.DARK ? Themes.LIGHT : Themes.DARK;
-    setTheme(newTheme);
+    setTheme?.(newTheme);
     localStorage.setItem(LocalStorageKeys.THEME, newTheme);
   };
 

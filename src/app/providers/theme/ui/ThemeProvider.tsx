@@ -24,8 +24,8 @@ const ThemeProvider: FC = (props) => {
   }), [theme]);
 
   useEffect(() => {
-    appBodyEl.classList.remove(...Object.values(themeClassNames));
-    appBodyEl.classList.add(themeClassNames[theme]);
+    appBodyEl?.classList.remove(...Object.values(themeClassNames));
+    appBodyEl?.classList.add(themeClassNames[theme]);
   }, [theme]);
 
   return (

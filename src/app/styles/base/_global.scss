@@ -1,6 +1,6 @@
-@import "../mixins/hidden";
-@import "../mixins/dots-loading";
-@import "../mixins/container";
+@import "../../../shared/styles/mixins/hidden";
+@import "../../../shared/styles/mixins/dots-loading";
+@import "../../../shared/styles/mixins/container";
 
 .app {
   display: grid;

@@ -38,4 +38,5 @@ const Form: FC<FormProps> = (props) => {
   );
 };
 
+export { FormProps };
 export default Form;

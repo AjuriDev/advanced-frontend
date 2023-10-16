@@ -1,0 +1,21 @@
+{
+  "lang": "Русский",
+  "langShort": "Ру",
+  "pageNames": {
+    "main": "Главная",
+    "about": "О сайте"
+  },
+  "rootError": {
+    "title": "Что-то пошло не так",
+    "reloadPage": "Обновить страницу"
+  },
+  "actions": {
+    "login": "Войти",
+    "logout": "Выйти",
+    "toggle": "Переключить",
+    "open": "Открыть",
+    "increase": "Увеличить",
+    "decrease": "Уменьшить"
+  },
+  "loading": "Загрузка"
+}

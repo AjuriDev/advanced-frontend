@@ -1,12 +1,15 @@
 import {
-  FC, useState, useCallback, useEffect, Suspense,
+  FC, Suspense, useCallback, useEffect, useState,
 } from 'react';
 
-import { Spinner } from 'shared/ui';
-import { ClassName } from '../../types';
+import { Spinner, Text } from 'shared/ui';
+import { ClassName, TextType } from '../../types';
 import { joinClassNames as cn } from '../../lib/utils';
 import { useClickOutsideAlerter, useKeyDownAlerter } from '../../lib/hooks';
-import { AnimationDurations, ViewStates } from '../../lib/constants/ui';
+import {
+  AnimationDurations,
+  ViewStates,
+} from '../../lib/constants/ui';
 
 import Portal from '../Portal/Portal';
 
@@ -14,6 +17,7 @@ import cls from './Modal.module.scss';
 
 interface ModalProps extends ClassName {
   opened?: boolean;
+  title?: TextType;
   onClose?: () => void;
 }
 
@@ -21,7 +25,11 @@ const modalContainerEl = document.querySelector('#modal');
 
 const Modal: FC<ModalProps> = (props) => {
   const {
-    className, opened, onClose, children,
+    className,
+    opened,
+    title,
+    children,
+    onClose,
   } = props;
 
   const [
@@ -58,7 +66,7 @@ const Modal: FC<ModalProps> = (props) => {
       : (isOpened || isOpening) && ViewStates.CLOSED;
 
     if (transitionState) setViewState(transitionState);
-    const timer: NodeJS.Timer = newState
+    const timer: NodeJS.Timer | null = newState
       ? setTimeout(() => {
         setViewState(newState);
       }, AnimationDurations.NORMAL)
@@ -70,31 +78,36 @@ const Modal: FC<ModalProps> = (props) => {
     };
   }, [opened, isOpened, isOpening, isClosing, isClosed]);
 
-  return (
-    <Portal element={modalContainerEl}>
-      <div className={cn(
-        cls.root,
-        {
-          [cls._closed]: isClosed,
-          [cls._opened]: isOpened,
-          [cls._opening]: isOpening,
-          [cls._closing]: isClosing,
-        },
-        [className],
-      )}
-      >
-        <div className={cls.overlay}>
-          <div ref={ref} className={cls.content}>
-            {isClosed ? null : (
-              <Suspense fallback={<Spinner />}>
-                {children}
-              </Suspense>
-            )}
-          </div>
+  const modal = (
+    <div className={cn(
+      cls.root,
+      {
+        [cls._closed]: isClosed,
+        [cls._opened]: isOpened,
+        [cls._opening]: isOpening,
+        [cls._closing]: isClosing,
+      },
+      [className],
+    )}
+    >
+      <div className={cls.overlay}>
+        <div ref={ref} className={cls.content}>
+          {title && <Text className={cls.title} text={title} Tag="h3" />}
+          {isClosed ? null : (
+            <Suspense fallback={<Spinner />}>
+              {children}
+            </Suspense>
+          )}
         </div>
       </div>
-    </Portal>
+    </div>
   );
+
+  return modalContainerEl ? (
+    <Portal element={modalContainerEl}>
+      {modal}
+    </Portal>
+  ) : modal;
 };
 
 export default Modal;

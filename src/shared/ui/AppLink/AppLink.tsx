@@ -1,9 +1,13 @@
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import { ClassName, View, IconComponent } from '../../types';
+import {
+  ClassName, View, IconComponent, TextType,
+} from '../../types';
 import { joinClassNames as cn } from '../../lib/utils';
 import { UIViewTypes } from '../../lib/constants/ui';
+
+import Text from '../Text/Text';
 
 import cls from './AppLink.module.scss';
 
@@ -11,11 +15,17 @@ interface AppLinkProps extends
   ClassName,
   LinkProps,
   View,
-  IconComponent {}
+  IconComponent {
+  text?: TextType;
+}
 
 const AppLink: FC<AppLinkProps> = (props) => {
   const {
-    className, view = UIViewTypes.PRIMARY, Icon, children, ...linkProps
+    className,
+    view = UIViewTypes.PRIMARY,
+    text,
+    Icon,
+    ...linkProps
   } = props;
 
   return (
@@ -24,7 +34,7 @@ const AppLink: FC<AppLinkProps> = (props) => {
       {...linkProps}
     >
       {Icon && <Icon className={cls.icon} />}
-      {children}
+      {text && <Text text={text} />}
     </Link>
   );
 };

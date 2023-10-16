@@ -7,13 +7,15 @@ interface ClickOutsideAlerterParams {
   turnedOn?: boolean;
 }
 
-function useClickOutsideAlerter(params: ClickOutsideAlerterParams) {
+function useClickOutsideAlerter<T extends HTMLElement = HTMLDivElement>(
+  params: ClickOutsideAlerterParams,
+) {
   const { onOutsideClick, turnedOn = true } = params;
-  const ref = useRef(null);
+  const ref = useRef<T>(null);
 
   const handleOutsideClick = useCallback(
     (e) => {
-      if (!ref?.current.contains(e.target)) {
+      if (!ref?.current?.contains(e.target)) {
         onOutsideClick();
       }
     },

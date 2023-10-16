@@ -17,29 +17,21 @@ interface Size {
   size?: UISizes;
 }
 
+interface Translation {
+  tKey: string;
+  ns?: string;
+}
+
+type TextType = string | number | Translation;
+
+type TextElTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'li';
+
+interface Loading {
+  loading?: boolean;
+}
+
 interface IconComponent {
   Icon?: FC<SVGAttributes<SVGElement>>;
-}
-
-interface FieldChangeHandlerParams {
-  name: string;
-  value: string;
-}
-
-interface FieldChangeHandler {
-  onChange?: (params: FieldChangeHandlerParams) => void;
-}
-
-interface FieldProps extends
-  Partial<FieldChangeHandlerParams>,
-  FieldChangeHandler {
-  label?: string,
-  hint?: string,
-  autofocus?: boolean
-}
-
-interface FormSubmitHandler {
-  onSubmit?: () => void;
 }
 
 export {
@@ -47,9 +39,9 @@ export {
   View,
   Variant,
   Size,
+  Translation,
+  TextType,
+  TextElTags,
+  Loading,
   IconComponent,
-  FieldChangeHandlerParams,
-  FieldChangeHandler,
-  FormSubmitHandler,
-  FieldProps,
 };

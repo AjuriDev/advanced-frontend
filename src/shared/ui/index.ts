@@ -5,5 +5,6 @@ export { default as Spinner } from './Spinner/Spinner';
 export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { default as Modal } from './Modal/Modal';
 export { default as Portal } from './Portal/Portal';
-export { default as Form } from './Form/Form';
+export { default as Form, FormProps } from './Form/Form';
 export { default as Input } from './Input/Input';
+export { default as Text } from './Text/Text';

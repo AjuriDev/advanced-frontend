@@ -6,7 +6,6 @@ i18n
   .init({
     lng: 'ru',
     fallbackLng: 'ru',
-    defaultNS: 'common',
 
     debug: false,
 

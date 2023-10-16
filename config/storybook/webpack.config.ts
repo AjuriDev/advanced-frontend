@@ -1,4 +1,4 @@
-import { Configuration, RuleSetRule } from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import path from 'path';
 import { BuildOptions, BuildPaths } from '../build/types';
 import buildCSSLoader from '../build/loaders/buildCSSLoader';
@@ -39,7 +39,7 @@ export default ({ config }: { config: Configuration }) => {
   config.module.rules = [
     ...(
       config.module.rules
-        ?.map((rule: RuleSetRule) => (/svg/.test(rule.test as string)
+        ?.map((rule) => typeof rule === 'object' && (/svg/.test(rule?.test as string)
           ? { ...rule, exclude: /\.svg$/i }
           : rule))
       || []
@@ -47,6 +47,10 @@ export default ({ config }: { config: Configuration }) => {
     buildCSSLoader(options),
     buildSVGLoader(),
   ];
+
+  config.plugins?.push(new DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 };

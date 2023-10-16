@@ -7,7 +7,7 @@ const meta: Meta<typeof Modal> = {
   tags: ['autodocs'],
   args: {
     opened: true,
-    children: 'Lorem',
+    children: 'Some text',
   },
 };
 
@@ -15,5 +15,11 @@ type Story = StoryObj<typeof meta>;
 
 const Default: Story = {};
 
-export { Default };
+const WithTitle: Story = {
+  args: {
+    title: 'Title',
+  },
+};
+
+export { Default, WithTitle };
 export default meta;

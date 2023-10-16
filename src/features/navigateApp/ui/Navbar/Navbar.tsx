@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { ClassName } from 'shared/types';
 import { joinClassNames as cn } from 'shared/lib/utils';
@@ -31,18 +30,17 @@ const routeConfig = {
 
 const Navbar: FC<NavbarProps> = (props) => {
   const { className, onlyIcon = false } = props;
-  const { t } = useTranslation();
 
   return (
     <div className={cn(cls.root, { [cls.onlyIcon]: onlyIcon }, [className])}>
       {Object.values(routeConfig).map(({ route, path, Icon }) => (
         <AppLink
           key={route}
+          className={cls.link}
+          text={{ tKey: `pageNames.${route}` }}
           to={path}
           Icon={Icon}
-        >
-          <span className={cls.text}>{t(`pageNames.${route}`)}</span>
-        </AppLink>
+        />
       ))}
     </div>
   );

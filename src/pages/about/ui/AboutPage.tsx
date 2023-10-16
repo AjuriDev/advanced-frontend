@@ -1,14 +1,11 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
-const AboutPage: FC = () => {
-  const { t } = useTranslation('aboutPage');
+import { Text } from 'shared/ui';
 
-  return (
-    <div className="page">
-      <h1>{t('pageName')}</h1>
-    </div>
-  );
-};
+const AboutPage: FC = () => (
+  <div className="page">
+    <Text text={{ tKey: 'pageName', ns: 'aboutPage' }} Tag="h1" />
+  </div>
+);
 
 export default AboutPage;

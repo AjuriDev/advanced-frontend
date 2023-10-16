@@ -48,9 +48,28 @@ img {
   max-height: 100%;
 }
 
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// input:-webkit-autofill:active {
-//   box-shadow: 0 0 0 30px #fff inset !important;
-// }
+h1 {
+  font-size: var(--font-size--xxl);
+}
+
+h2 {
+  font-size: var(--font-size--xl);
+}
+
+h3 {
+  font-size: var(--font-size--lg);
+}
+
+h4,
+h5,
+h6,
+p {
+  font-size: var(--font-size--md);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #fff inset !important;
+}
