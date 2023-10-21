@@ -92,9 +92,9 @@ const Modal: FC<ModalProps> = (props) => {
     >
       <div className={cls.overlay}>
         <div ref={ref} className={cls.content}>
-          {title && <Text className={cls.title} text={title} Tag="h3" />}
           {isClosed ? null : (
             <Suspense fallback={<Spinner />}>
+              {title && <Text className={cls.title} text={title} Tag="h3" />}
               {children}
             </Suspense>
           )}

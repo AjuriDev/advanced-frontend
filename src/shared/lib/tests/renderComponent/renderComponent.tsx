@@ -3,10 +3,10 @@ import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 
-import { StoreProvider } from 'app/providers/store';
+import { StoreProvider, StateSchema } from 'app/providers/store';
 
 import { RoutePath, AppRoutes } from 'shared/lib/constants';
-import { StateSchema } from 'shared/types';
+
 import { DeepPartial } from '@reduxjs/toolkit';
 import i18n from '../../../config/i18n/i18n';
 

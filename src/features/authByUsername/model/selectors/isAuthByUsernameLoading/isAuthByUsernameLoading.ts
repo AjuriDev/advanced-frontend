@@ -1,5 +1,11 @@
-import { StateSchema } from 'shared/types';
+import { StateSchema } from 'app/providers/store';
+import {
+  authByUsernameInitialState,
+} from '../../slice/authByUsername.slice';
 
-const isAuthByUsernameLoading = (state: StateSchema) => state.authByUsername.loading;
+const isAuthByUsernameLoading = (state: StateSchema) => (
+  state.authByUsername
+    || authByUsernameInitialState
+).loading;
 
 export default isAuthByUsernameLoading;

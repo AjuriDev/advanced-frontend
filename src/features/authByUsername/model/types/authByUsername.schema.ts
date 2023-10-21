@@ -6,7 +6,6 @@ type ChangeDataActionPayload = PayloadAction<FieldData<AuthByUsernameFormFieldNa
 
 interface AuthByUsernameSchema {
   data: AuthByUsernameFormData;
-  modalOpened: boolean;
   loading: boolean;
   error?: ResponseError;
 }

@@ -6,5 +6,5 @@ export * from './model/services';
 export { default as AuthByUsernameForm } from './ui/AuthByUsernameForm/AuthByUsernameForm';
 export { AuthByUsernameFormFieldNames } from './ui/AuthByUsernameForm/lib/constants';
 export { AuthByUsernameFormData } from './ui/AuthByUsernameForm/types';
-
-export { default as AuthByUsernameModal } from './ui/AuthByUsernameModal/AuthByUsernameModal';
+export { default as AuthByUsernameModalBody }
+  from './ui/AuthByUsernameModalBody/AuthByUsernameModalBody.async';
