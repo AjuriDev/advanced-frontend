@@ -1,11 +1,9 @@
-import { StateSchema } from 'shared/types';
+import { StateSchema, StoreProvider, asyncReducers } from 'app/providers/store';
 import { Decorator } from '@storybook/react';
-
-import StoreProvider from 'app/providers/store/ui/StoreProvider';
 
 type StoreDecoratorType = (state: StateSchema) => Decorator;
 const StoreDecorator: StoreDecoratorType = (state) => (Story) => (
-  <StoreProvider initialState={state}>
+  <StoreProvider initialState={state} asyncReducers={asyncReducers}>
     <Story />
   </StoreProvider>
 );

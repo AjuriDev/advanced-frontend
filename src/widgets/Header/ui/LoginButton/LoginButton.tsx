@@ -5,10 +5,7 @@ import { ClassName } from 'shared/types';
 import { UIViewTypes } from 'shared/lib/constants/ui';
 import { Button } from 'shared/ui';
 
-import {
-  authByUsernameActions,
-  AuthByUsernameModal,
-} from 'features/authByUsername';
+import { authActions } from 'entities/auth';
 
 interface LoginButtonProps extends ClassName {}
 
@@ -17,20 +14,16 @@ const LoginButton: FC<LoginButtonProps> = (props) => {
   const dispatch = useDispatch();
 
   const handleModalOpen = useCallback(() => {
-    dispatch(authByUsernameActions.toggleModal(true));
+    dispatch(authActions.toggleModal(true));
   }, [dispatch]);
 
   return (
-    <>
-      <Button
-        className={className}
-        view={UIViewTypes.INHERIT}
-        text={{ tKey: 'actions.login' }}
-        onClick={handleModalOpen}
-      />
-
-      <AuthByUsernameModal />
-    </>
+    <Button
+      className={className}
+      view={UIViewTypes.INHERIT}
+      text={{ tKey: 'actions.login' }}
+      onClick={handleModalOpen}
+    />
   );
 };
 

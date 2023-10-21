@@ -1,5 +1,9 @@
-import { StateSchema } from 'shared/types';
+import { StateSchema } from 'app/providers/store';
+import {
+  authByUsernameInitialState,
+} from '../../slice/authByUsername.slice';
 
-const getAuthByUsername = (state: StateSchema) => state.authByUsername;
+const getAuthByUsername = (state: StateSchema) => state.authByUsername
+  || authByUsernameInitialState;
 
 export default getAuthByUsername;

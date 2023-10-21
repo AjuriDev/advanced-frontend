@@ -1,13 +1,17 @@
 import { DeepPartial } from '@reduxjs/toolkit';
-import { StateSchema } from 'shared/types';
+import { StateSchema } from 'app/providers/store';
 import getAuthByUsernameData from './getAuthByUsernameData';
+import {
+  authByUsernameInitialState,
+} from '../../slice/authByUsername.slice';
 
 describe('getAuthByUsernameData', () => {
   test('should return authByUsernameData', () => {
-    const state: DeepPartial<StateSchema> = {
-      authByUsername: { data: { username: { value: 'admin' } } },
-    };
+    const state: DeepPartial<StateSchema> = { authByUsername: authByUsernameInitialState };
     expect(getAuthByUsernameData(state as StateSchema))
-      .toEqual({ username: { value: 'admin' } });
+      .toEqual({
+        username: { value: '', name: 'username' },
+        password: { value: '', name: 'password' },
+      });
   });
 });

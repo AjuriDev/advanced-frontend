@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { User, userActions } from 'entities/user';
+import { authActions } from 'entities/auth';
 import { ResponseError } from 'shared/types';
 
 interface AuthByUsernameParams {
@@ -16,6 +17,7 @@ const authByUsername = createAsyncThunk<User, AuthByUsernameParams, { rejectValu
       if (!response.data) throw new Error();
 
       thunkAPI.dispatch(userActions.setAuthData(response.data));
+      thunkAPI.dispatch(authActions.toggleModal(false));
 
       return response.data;
     } catch (e) {

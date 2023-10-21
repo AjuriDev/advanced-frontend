@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { AuthByUsernameFormFieldNames } from '../../ui/AuthByUsernameForm/lib/constants';
 import AuthByUsernameSchema, { ChangeDataActionPayload } from '../types/authByUsername.schema';
 import authByUsername
@@ -16,7 +16,6 @@ const initialData = {
 };
 const initialState: AuthByUsernameSchema = {
   data: initialData,
-  modalOpened: false,
   loading: false,
 };
 
@@ -29,9 +28,6 @@ export const authByUsernameSlice = createSlice({
     },
     resetData: (state) => {
       state.data = initialData;
-    },
-    toggleModal: (state, { payload }: PayloadAction<boolean>) => {
-      state.modalOpened = payload;
     },
   },
   extraReducers: (builder) => {

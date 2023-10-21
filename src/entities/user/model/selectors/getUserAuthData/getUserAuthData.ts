@@ -1,4 +1,4 @@
-import { StateSchema } from 'shared/types';
+import { StateSchema } from 'app/providers/store';
 
 const getUserAuthData = (state: StateSchema) => state.user.authData;
 
